@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MARITEST FINAL v14 — Multi Mata Kuliah | Poltekpel Surabaya</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+:root{--bg:#08131f;--bg2:#0d1c2b;--panel:#122436;--panel2:#17304a;--line:#1f3d59;--txt:#e8f1f8;--dim:#8fa9c0;--accent:#00d4a0;--accent2:#ffb020;--red:#ff4d5e;--blue:#3ea6ff;--fs:15px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:radial-gradient(1200px 600px at 10% -10%,#10304a 0,transparent 60%),radial-gradient(900px 500px at 110% 10%,#0b3b39 0,transparent 55%),var(--bg);color:var(--txt);min-height:100vh;font-size:var(--fs)}
+body.light{--bg:#f0f4f8;--bg2:#e2e8f0;--panel:#fff;--panel2:#eef2f6;--line:#cbd5e1;--txt:#1e293b;--dim:#64748b;background:linear-gradient(160deg,#f0f4f8,#e2e8f0)}
+.navbar{position:sticky;top:0;z-index:80;display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(9,22,35,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+body.light .navbar{background:rgba(255,255,255,.94)}
+.brand{display:flex;align-items:center;gap:8px;flex:1;min-width:0}
+.logo{width:34px;height:34px;flex:none;border-radius:9px;background:linear-gradient(135deg,var(--accent),#0090ff);display:grid;place-items:center;font-size:17px;box-shadow:0 0 14px rgba(0,212,160,.35)}
+.brand h1{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{display:block;font-size:9.5px;color:var(--dim)}
+.nav-stats{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.pill{background:var(--panel);border:1px solid var(--line);padding:4px 9px;border-radius:999px;font-size:11px;font-weight:600;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.pill b{color:var(--accent2)}.pill.ok b{color:var(--accent)}.pill.no b{color:var(--red)}
+.pill.taruna{background:linear-gradient(135deg,rgba(0,212,160,.15),rgba(62,166,255,.15));border-color:rgba(0,212,160,.4);max-width:220px;overflow:hidden}
+.pill.taruna b{color:var(--accent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;max-width:170px}
+.pill.time b{color:var(--blue)}.pill.time.warn b{color:var(--accent2)}.pill.time.danger b{color:var(--red)}
+.icon-btn{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--txt);cursor:pointer;font-size:15px;display:grid;place-items:center;flex:none}
+.icon-btn:hover{background:var(--panel2);border-color:var(--accent)}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--txt);padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
+.btn:hover{background:var(--panel2);border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#00a882);border:none;color:#03231c}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent}
+.btn.warn{background:linear-gradient(135deg,#ffb020,#ff8c00);border:none;color:#1a0e00;font-weight:700}
+.btn.wa{background:linear-gradient(135deg,#25d366,#128c7e);border:none;color:#fff;font-weight:700}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.help{background:linear-gradient(135deg,#3ea6ff,#0066cc);border:none;color:#fff;font-weight:700}
+.wrap{max-width:900px;margin:0 auto;padding:14px 12px 80px}
+.hidden{display:none!important}
+.hero{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:20px;padding:24px 18px;text-align:center;margin-top:10px}
+.hero .badge{display:inline-block;background:rgba(0,212,160,.12);color:var(--accent);border:1px solid rgba(0,212,160,.35);padding:4px 12px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:1px}
+.hero h2{font-size:21px;margin:14px 0 6px;line-height:1.3}
+.hero p{color:var(--dim);font-size:13px;line-height:1.6;max-width:600px;margin:0 auto}
+.credit{margin-top:14px;font-size:11.5px;color:var(--dim);line-height:1.7}
+.credit b{color:var(--accent2)}
+.warn-banner{background:linear-gradient(135deg,rgba(255,77,94,.2),rgba(255,140,0,.15));border:1.5px solid rgba(255,77,94,.5);border-radius:14px;padding:14px 16px;margin-top:14px;text-align:left;display:none}
+.warn-banner.show{display:block;animation:pop .3s}
+.warn-banner h4{font-size:14px;color:#ff6b7a;margin-bottom:8px}
+.warn-banner p{font-size:12.5px;line-height:1.6;color:#fecdd3;margin-bottom:8px}
+.warn-banner ol{padding-left:20px;font-size:12.5px;line-height:1.8;color:#fecdd3}
+.warn-banner ol li b{color:#fff}
+.warn-banner .btn{margin-top:8px;font-size:12px;padding:8px 12px}
+.help-banner{background:linear-gradient(135deg,rgba(62,166,255,.15),rgba(0,102,204,.1));border:1.5px solid rgba(62,166,255,.5);border-radius:14px;padding:14px 16px;margin-top:14px;text-align:left;display:flex;align-items:center;gap:12px;cursor:pointer;transition:.15s}
+.help-banner:hover{background:linear-gradient(135deg,rgba(62,166,255,.25),rgba(0,102,204,.15));transform:translateX(3px)}
+.help-banner .hb-ico{width:44px;height:44px;flex:none;border-radius:12px;background:rgba(62,166,255,.25);border:1px solid rgba(62,166,255,.5);display:grid;place-items:center;font-size:22px}
+.help-banner .hb-text{flex:1}
+.help-banner .hb-text b{font-size:14px;color:var(--blue);display:block;margin-bottom:2px}
+.help-banner .hb-text small{font-size:11.5px;color:var(--dim);line-height:1.4;display:block}
+.help-banner .hb-arrow{font-size:20px;color:var(--blue);flex:none}
+.subjects{margin-top:18px;display:grid;gap:10px;text-align:left}
+.subj-card{background:var(--bg2);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;transition:.15s;display:flex;align-items:center;gap:12px}
+.subj-card:hover{border-color:var(--accent);transform:translateX(3px)}
+.subj-card.active{background:linear-gradient(135deg,rgba(0,212,160,.15),rgba(62,166,255,.1));border-color:var(--accent);box-shadow:0 0 16px rgba(0,212,160,.25)}
+.subj-ico{width:48px;height:48px;flex:none;border-radius:12px;display:grid;place-items:center;font-size:24px;background:linear-gradient(135deg,var(--panel2),var(--panel))}
+.subj-card.active .subj-ico{background:linear-gradient(135deg,var(--accent),#00a882);color:#03231c}
+.subj-info{flex:1;min-width:0}
+.subj-info b{font-size:14px;display:block;line-height:1.3}
+.subj-card.active .subj-info b{color:var(--accent)}
+.subj-info small{font-size:11.5px;color:var(--dim);display:block;margin-top:3px;line-height:1.4}
+.subj-check{width:24px;height:24px;flex:none;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:transparent}
+.subj-card.active .subj-check{background:var(--accent);border-color:var(--accent);color:#03231c;font-weight:800}
+.rules-box{text-align:left;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:16px}
+.rules-box h3{font-size:14px;color:var(--accent);margin-bottom:10px}
+.rules-box ol{padding-left:20px;font-size:12.5px;line-height:1.85;color:#c9dcec}
+body.light .rules-box ol{color:#475569}
+.rules-box ol li{margin-bottom:6px}
+.rules-box ol li b{color:var(--accent2)}
+.passbox{background:linear-gradient(135deg,rgba(0,212,160,.12),rgba(62,166,255,.08));border:1px solid rgba(0,212,160,.35);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:12.5px;line-height:1.7}
+.passbox b{color:var(--accent)}
+.passbox .kkm{font-size:22px;font-weight:800;color:var(--accent)}
+.rules-check{display:flex;align-items:center;gap:10px;margin-top:14px;padding:11px 14px;background:rgba(255,176,32,.08);border:1px solid rgba(255,176,32,.35);border-radius:10px;font-size:12.5px;cursor:pointer;user-select:none}
+.rules-check input{width:18px;height:18px;accent-color:var(--accent);cursor:pointer;flex:none}
+.qbar{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.qbar .num{font-size:11.5px;color:var(--dim);font-weight:600}
+.track{flex:1;height:6px;background:var(--panel);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#0090ff);transition:width .3s}
+.card{background:linear-gradient(170deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tag{font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:3px 9px;border-radius:6px;background:rgba(62,166,255,.12);color:var(--blue);border:1px solid rgba(62,166,255,.3)}
+.tag.m{background:rgba(255,176,32,.12);color:var(--accent2);border-color:rgba(255,176,32,.3)}
+.tag.cat{background:rgba(0,212,160,.1);color:var(--accent);border-color:rgba(0,212,160,.25)}
+.tag.attempt{background:rgba(62,166,255,.15);color:var(--blue);border-color:rgba(62,166,255,.35)}
+.qtext{font-size:calc(var(--fs) + 2px);line-height:1.55;font-weight:600;margin-bottom:16px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;background:var(--bg2);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer;text-align:left;color:var(--txt);font-family:inherit;font-size:calc(var(--fs) + .5px);line-height:1.45;width:100%;transition:.15s}
+.opt:hover:not(.locked){border-color:var(--accent);background:var(--panel2);transform:translateX(3px)}
+.opt .k{width:24px;height:24px;flex:none;border-radius:7px;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;font-size:11.5px;font-weight:800;color:var(--dim)}
+.opt.correct{border-color:var(--accent);background:rgba(0,212,160,.12)}
+.opt.correct .k{background:var(--accent);color:#03231c;border-color:var(--accent)}
+.opt.wrong{border-color:var(--red);background:rgba(255,77,94,.1)}
+.opt.wrong .k{background:var(--red);color:#fff;border-color:var(--red)}
+.opt.locked{cursor:default}.opt.dim{opacity:.45}
+.navrow{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.navrow .btn{flex:1;padding:11px;min-width:110px}
+.idform{display:grid;gap:12px;margin:20px 0 8px;text-align:left}
+.idform label{font-size:11.5px;color:var(--dim);font-weight:600;display:block;margin-bottom:4px}
+.idform input,.idform select{width:100%;background:var(--bg2);border:1.5px solid var(--line);color:var(--txt);border-radius:10px;padding:11px 13px;font-size:14px;font-family:inherit}
+.idform input:focus,.idform select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,160,.15)}
+.idgrid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.idgrid2{grid-template-columns:1fr}}
+.overlay{position:fixed;inset:0;background:rgba(3,9,16,.85);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:14px;z-index:200;animation:fade .18s;overflow-y:auto}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal{width:100%;max-width:520px;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.6);max-height:92vh;display:flex;flex-direction:column;animation:pop .25s;margin:auto}
+.modal.wide{max-width:900px}
+@keyframes pop{from{transform:scale(.9) translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.mhead{padding:16px 18px 12px;display:flex;align-items:center;gap:10px;flex:none}
+.mhead.ok{background:linear-gradient(135deg,rgba(0,212,160,.2),transparent)}
+.mhead.no{background:linear-gradient(135deg,rgba(255,77,94,.2),transparent)}
+.mhead.info{background:linear-gradient(135deg,rgba(62,166,255,.2),transparent)}
+.mico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:21px;flex:none;font-weight:800}
+.mhead.ok .mico{background:rgba(0,212,160,.22);border:1.5px solid rgba(0,212,160,.6);color:var(--accent)}
+.mhead.no .mico{background:rgba(255,77,94,.22);border:1.5px solid rgba(255,77,94,.6);color:var(--red)}
+.mhead.info .mico{background:rgba(62,166,255,.22);border:1.5px solid rgba(62,166,255,.6);color:var(--blue)}
+.mhead h3{font-size:16.5px}.mhead p{font-size:11.5px;color:var(--dim);margin-top:2px}
+.mbody{padding:0 18px 16px;overflow-y:auto;flex:1}
+.mfoot{padding:0 18px 18px;flex:none;display:flex;gap:8px}
+.mfoot .btn{flex:1;padding:12px}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(340px,88vw);z-index:150;background:var(--bg2);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;pointer-events:none}
+.drawer.open{transform:none;pointer-events:auto}
+.dhead{padding:14px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.dhead h4{font-size:13px}
+.legend{display:flex;gap:10px;font-size:10px;color:var(--dim);margin-top:4px;flex-wrap:wrap}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:3px}
+.dgrid{flex:1;overflow-y:auto;padding:12px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-content:start}
+.dgrid button{aspect-ratio:1;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--dim);font-weight:700;font-size:11px;cursor:pointer;font-family:inherit}
+.dgrid button:hover{border-color:var(--accent);color:var(--txt)}
+.dgrid button.cur{outline:2px solid var(--blue);outline-offset:1px;color:#fff}
+.dgrid button.ok{background:rgba(0,212,160,.18);color:var(--accent);border-color:rgba(0,212,160,.45)}
+.dgrid button.no{background:rgba(255,77,94,.16);color:var(--red);border-color:rgba(255,77,94,.45)}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:140;opacity:0;pointer-events:none;transition:.25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.settings-panel{position:fixed;top:60px;right:12px;z-index:160;width:min(320px,90vw);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 16px 40px rgba(0,0,0,.5);display:none}
+.settings-panel.open{display:block;animation:pop .18s}
+.settings-panel h4{font-size:12.5px;margin-bottom:12px;color:var(--accent)}
+.set-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;font-size:12.5px;gap:10px}
+.set-row label{color:var(--dim);flex:1}
+.set-row select{background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:6px 10px;font-size:12px;font-family:inherit;min-width:110px}
+
+/* ============ PRINT AREA — HITAM PUTIH TAJAM ============ */
+#printArea{background:#ffffff!important;color:#000000!important;border-radius:16px;padding:22px 20px;text-align:left;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+#printArea .result-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px;border-bottom:2px solid #000;padding-bottom:10px}
+#printArea .result-id{font-size:11.5px;line-height:1.7;color:#000}
+#printArea .result-id b{color:#000}
+#printArea .result-id span{color:#000!important}
+#printArea .idcard{background:#fff!important;border:1.5px solid #000!important;color:#000!important;border-radius:10px;padding:12px 14px;margin:0 0 14px;font-size:13px;line-height:1.8}
+#printArea .idcard b{color:#000}
+#printArea .attempt-badge{display:inline-block;background:#fff!important;color:#000!important;border:1.5px solid #000!important;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:800;margin-bottom:10px}
+#printArea .ring{width:130px;height:130px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:#fff!important;box-shadow:none!important;border:3px solid #000}
+#printArea .ring .inner{width:104px;height:104px;border-radius:50%;background:#fff!important;display:grid;place-items:center;flex-direction:column}
+#printArea .ring .val{font-size:32px;font-weight:900;line-height:1;color:#000!important}
+#printArea .ring .sub{font-size:10px;color:#000!important;letter-spacing:1px;margin-top:3px;font-weight:700}
+#printArea .grade{font-size:20px;font-weight:900;margin-bottom:3px;color:#000!important;text-align:center}
+#printArea .verdict{display:inline-block;padding:8px 18px;border-radius:99px;font-size:13px;font-weight:800;letter-spacing:1px;margin:8px 0;background:#fff!important;color:#000!important;border:2px solid #000}
+#printArea .grade + #verdictWrap{text-align:center}
+#printArea p#resMsg{color:#000!important;font-size:12.5px;text-align:center;margin-top:6px;font-weight:600}
+#printArea .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0;text-align:center}
+#printArea .meta div{background:#fff!important;border:1.5px solid #000!important;border-radius:10px;padding:10px 8px}
+#printArea .meta span{display:block;font-size:10px;color:#000!important;text-transform:uppercase;font-weight:700}
+#printArea .meta strong{font-size:16px;color:#000!important;font-weight:900}
+#printArea .rlist{display:grid;gap:6px;margin-top:14px;text-align:left}
+#printArea .rrow{display:flex;align-items:center;gap:8px;background:#fff!important;border:1.5px solid #000!important;border-radius:8px;padding:8px 11px;font-size:12px;color:#000!important}
+#printArea .rrow b{margin-left:auto;color:#000!important}
+#printArea .bar{height:5px;width:60px;background:#fff!important;border:1px solid #000;border-radius:99px;overflow:hidden}
+#printArea .bar i{display:block;height:100%;background:#000!important}
+#printArea h4{font-size:12.5px;color:#000!important;margin:16px 0 8px;border-bottom:2px solid #000;padding-bottom:5px;font-weight:900}
+#printArea .history-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:11.5px;background:#fff!important}
+#printArea .history-table th,#printArea .history-table td{border:1px solid #000!important;padding:6px 8px;text-align:left;color:#000!important;background:#fff!important}
+#printArea .history-table th{background:#fff!important;color:#000!important;font-weight:800}
+#printArea .session-info{font-size:11px;color:#000!important;margin-top:6px}
+#printArea .print-answers{margin-top:18px;text-align:left;font-size:11.5px;line-height:1.55;border-top:2px solid #000;padding-top:12px}
+#printArea .print-answers h4{font-size:12.5px;color:#000!important;margin:10px 0 10px;font-weight:900}
+#printArea .print-answers .pa-item{background:#fff!important;border:1.5px solid #000!important;border-radius:8px;padding:10px 12px;margin-bottom:9px;page-break-inside:avoid}
+#printArea .print-answers .pa-q{font-weight:800;color:#000!important;margin-bottom:6px;font-size:12px}
+#printArea .print-answers .pa-line{display:flex;gap:6px;padding:2px 0;align-items:flex-start;color:#000!important}
+#printArea .print-answers .pa-key{font-weight:900;width:22px;flex:none;color:#000!important}
+#printArea .print-answers .pa-ok{color:#000!important;font-weight:900}
+#printArea .print-answers .pa-no{color:#000!important;font-weight:900}
+#printArea .print-answers .pa-info{font-size:10.5px;color:#000!important;margin-bottom:8px;font-style:italic}
+.result-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.result-hint{text-align:center;margin-top:10px;font-size:11px;color:var(--dim)}
+
+/* INFOGRAFIS TUTORIAL */
+#tutPoster{background:#f8fafc;color:#0f172a;padding:16px;border-radius:12px;line-height:1.4;font-family:'Segoe UI',system-ui,sans-serif}
+#tutPoster .tp-header{background:linear-gradient(135deg,#0a4d8c,#1e88e5);color:#fff;border-radius:14px;padding:16px 14px;text-align:center;margin-bottom:14px;position:relative;overflow:hidden}
+#tutPoster .tp-header h1{font-size:22px;font-weight:800;position:relative;letter-spacing:1px;text-transform:uppercase}
+#tutPoster .tp-header h2{font-size:26px;font-weight:900;color:#ffd60a;position:relative;margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+#tutPoster .tp-header .sub{font-size:12px;position:relative;margin-top:6px;opacity:.95;font-weight:600}
+#tutPoster .tp-logos{position:relative;display:flex;justify-content:center;gap:14px;margin-bottom:8px;font-size:36px}
+#tutPoster .tp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+@media(max-width:760px){#tutPoster .tp-grid{grid-template-columns:repeat(2,1fr)}}
+#tutPoster .tp-step{background:#fff;border:2px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.05);display:flex;flex-direction:column}
+#tutPoster .tp-step-head{background:linear-gradient(135deg,#1e88e5,#0a4d8c);color:#fff;padding:7px 10px;display:flex;align-items:center;gap:8px;font-weight:800;font-size:12.5px}
+#tutPoster .tp-num{background:#fff;color:#0a4d8c;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900;flex:none}
+#tutPoster .tp-step-body{padding:10px;font-size:11.5px;color:#1e293b;flex:1;display:flex;flex-direction:column;gap:6px}
+#tutPoster .tp-phone{background:#0a4d8c;border-radius:10px;padding:6px;margin-top:auto}
+#tutPoster .tp-screen{background:#fff;border-radius:6px;padding:6px 5px;min-height:70px;display:flex;flex-direction:column;gap:3px;font-size:9.5px}
+#tutPoster .tp-bar{height:14px;background:#e2e8f0;border-radius:3px;display:flex;align-items:center;padding:0 4px;font-size:8px;color:#64748b;justify-content:space-between}
+#tutPoster .tp-btn{background:#1e88e5;color:#fff;border-radius:4px;padding:4px 6px;font-size:9px;text-align:center;font-weight:700}
+#tutPoster .tp-badge-red{background:#fee2e2;color:#991b1b;border-radius:5px;padding:4px 6px;font-size:10px;text-align:center;font-weight:700;border:1px solid #fecaca}
+#tutPoster .tp-row{display:flex;gap:10px;margin-bottom:12px}
+@media(max-width:760px){#tutPoster .tp-row{flex-direction:column}}
+#tutPoster .tp-box{background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:12px;flex:1}
+#tutPoster .tp-box.green{border-color:#10b981}
+#tutPoster .tp-box.red{border-color:#ef4444}
+#tutPoster .tp-box.purple{border-color:#8b5cf6}
+#tutPoster .tp-box.orange{border-color:#f59e0b}
+#tutPoster .tp-box-title{background:#10b981;color:#fff;padding:6px 10px;border-radius:8px;font-weight:800;font-size:12px;display:inline-block;margin-bottom:8px}
+#tutPoster .tp-box-title.red{background:#ef4444}
+#tutPoster .tp-box-title.purple{background:#8b5cf6}
+#tutPoster .tp-box-title.orange{background:#f59e0b}
+#tutPoster .tp-check{display:flex;align-items:flex-start;gap:6px;font-size:11px;margin-bottom:5px;color:#1e293b;line-height:1.5}
+#tutPoster .tp-check .ic{font-size:14px;flex:none;line-height:1}
+#tutPoster .tp-footer{background:linear-gradient(135deg,#0a4d8c,#1e88e5);color:#fff;border-radius:12px;padding:10px;text-align:center;font-weight:800;font-size:13px;letter-spacing:1.5px;margin-top:12px}
+#tutPoster .tp-tip{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:10px;font-size:11.5px;color:#78350f;line-height:1.6}
+#tutPoster .tp-mini{background:#e0e7ff;border-radius:5px;padding:5px 8px;font-size:10px;text-align:center;color:#3730a3;font-weight:600}
+
+@media(max-width:560px){
+  .brand h1{font-size:11px}.brand small{font-size:8.5px}
+  .pill{padding:3px 7px;font-size:10px}.pill.taruna b{max-width:110px}
+  .hero h2{font-size:18px}.qtext{font-size:14.5px}
+  .card{padding:15px}.navbar{padding:6px 8px;gap:5px}
+  .opt{padding:10px 11px;font-size:13px}
+  .modal{max-width:100%}.settings-panel{right:8px;left:8px;width:auto}
+  #printArea{padding:16px 12px}
+  #printArea .meta{grid-template-columns:repeat(2,1fr)}
+  #printArea .result-header{flex-direction:column}
+  .result-actions .btn{flex:1;min-width:calc(50% - 4px);padding:11px 8px;font-size:12px}
+}
+
+/* ============ PRINT — HITAM PUTIH TAJAM ============ */
+@media print{
+  body{background:#fff!important;color:#000!important;font-family:Arial,Helvetica,sans-serif!important}
+  .navbar,.settings-panel,.drawer,.scrim,.result-actions,.result-hint,.overlay,.mfoot{display:none!important}
+  .wrap{max-width:100%;padding:0}
+  #resultScreen{padding:0}
+  #printArea,#printArea *{
+    color:#000!important;
+    background:#fff!important;
+    background-image:none!important;
+    border-color:#000!important;
+    text-shadow:none!important;
+    box-shadow:none!important;
+  }
+  #printArea .result-header{border-bottom:2px solid #000!important}
+  #printArea .idcard{border:1.5px solid #000!important}
+  #printArea .verdict,#printArea .attempt-badge{border:2px solid #000!important}
+  #printArea .pa-item,#printArea .rrow,#printArea .meta div{border:1.5px solid #000!important;page-break-inside:avoid}
+  #printArea .pa-ok,#printArea .pa-no{color:#000!important;font-weight:900!important}
+  #printArea .bar{border:1px solid #000!important}
+  #printArea .bar i{background:#000!important}
+  @page{size:A4;margin:10mm}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="brand">
+    <div class="logo">⚓</div>
+    <div style="min-width:0">
+      <h1>MARITEST — POLTEKPEL SURABAYA</h1>
+      <small>Multi Mata Kuliah • Rafael Sukirno, CE</small>
+    </div>
+  </div>
+  <div class="nav-stats">
+    <div class="pill taruna" id="tarunaPill" style="display:none">👤 <b id="navTaruna">—</b></div>
+    <div class="pill ok">✓ <b id="statOk">0</b></div>
+    <div class="pill no">✕ <b id="statNo">0</b></div>
+    <div class="pill time" id="timePill">⏱ <b id="statTime">--:--</b></div>
+    <div class="pill" id="attemptPill">🔄 <b id="statAttempt">0</b>/5</div>
+    <button type="button" class="icon-btn" id="btnHelp" title="Panduan">❓</button>
+    <button type="button" class="icon-btn" id="btnSettings" title="Pengaturan">⚙</button>
+    <button type="button" class="icon-btn" id="btnDrawer" title="Navigasi">☰</button>
+  </div>
+</nav>
+
+<div class="settings-panel" id="settingsPanel">
+  <h4>⚙ PENGATURAN TAMPILAN</h4>
+  <div class="set-row"><label>Tema</label>
+    <select id="setTheme"><option value="dark">Gelap</option><option value="light">Terang</option></select></div>
+  <div class="set-row"><label>Ukuran Teks</label>
+    <select id="setFont"><option value="14">Kecil</option><option value="15" selected>Sedang</option><option value="17">Besar</option></select></div>
+</div>
+
+<div class="wrap" id="startScreen">
+  <div class="hero">
+    <span class="badge">MARITEST FINAL v14 • 4 MATA KULIAH</span>
+    <h2>Ujian Online — Poltekpel Surabaya</h2>
+    <p>Pilih mata kuliah sesuai jurusan Anda. Setiap mata kuliah memiliki 100 soal pilihan ganda dengan soal &amp; jawaban diacak otomatis dan seimbang.</p>
+    <div class="credit">Disusun oleh: <b>Rafael Sukirno, CE</b></div>
+
+    <div class="warn-banner" id="warnBanner">
+      <h4>⚠ PENTING — BUKA DI CHROME / SAFARI</h4>
+      <p>Anda membuka file ini di dalam aplikasi (WhatsApp / Instagram / TikTok). <b>Print dan WA tidak bisa dari sini.</b></p>
+      <p><b>Cara perbaiki:</b></p>
+      <ol>
+        <li>Ketuk ikon <b>titik tiga (⋮)</b> di pojok kanan atas</li>
+        <li>Pilih <b>"Buka dengan browser"</b> / <b>"Open in Chrome"</b> / <b>"Open in Safari"</b></li>
+        <li>Atau: simpan file → buka Chrome → ketik <code>file:///sdcard/Download/</code> → tap file</li>
+      </ol>
+      <button type="button" class="btn warn" id="btnCopyLink">📋 Salin Link Halaman Ini</button>
+    </div>
+
+    <div class="help-banner" id="openTutorial">
+      <div class="hb-ico">📖</div>
+      <div class="hb-text">
+        <b>Panduan Cara Menggunakan MARITEST</b>
+        <small>7 langkah + perbandingan benar/salah + tips iPhone</small>
+      </div>
+      <div class="hb-arrow">›</div>
+    </div>
+
+    <div class="subjects" id="subjectList"></div>
+
+    <div class="rules-box">
+      <h3>📜 TATA CARA UJIAN</h3>
+      <ol>
+        <li><b>Jumlah soal:</b> 100 soal pilihan ganda — soal &amp; jawaban diacak otomatis dengan distribusi A/B/C/D seimbang (25:25:25:25).</li>
+        <li><b>Durasi:</b> 180 menit sejak test pertama dimulai.</li>
+        <li><b>Ulang:</b> maksimal 5x dalam sesi yang sama.</li>
+        <li><b>Tombol "Selesai Sekarang":</b> boleh berhenti kapan saja — <b>skor tetap dihitung dari total 100 soal</b>.</li>
+        <li><b>Popup pembahasan:</b> muncul setiap menjawab untuk memperkuat pemahaman.</li>
+        <li><b>Hasil cetak:</b> PDF hitam-putih tajam, hanya menampilkan soal yang <b>dikerjakan</b>.</li>
+      </ol>
+      <div class="passbox">
+        <div style="font-size:12px;color:var(--dim);margin-bottom:4px">🎯 STANDAR KELULUSAN (KKM)</div>
+        <div class="kkm">≥ 70 / 100</div>
+        <div style="margin-top:6px">• <b>≥ 85</b> LULUS EXCELLENT ⭐⭐⭐ • <b>70–84</b> LULUS BAIK ⭐⭐ • <b>60–69</b> REMIDI • <b>&lt; 60</b> BELUM LULUS</div>
+      </div>
+      <label class="rules-check">
+        <input type="checkbox" id="agreeRules">
+        <span>Saya sudah membaca &amp; memahami tata cara ujian dan siap mengerjakan dengan jujur.</span>
+      </label>
+    </div>
+
+    <div id="sessionStatus" style="margin-top:14px;font-size:11.5px;color:var(--dim)"></div>
+    <button type="button" class="btn primary" id="btnStart" disabled style="margin-top:14px;padding:13px 38px;font-size:14px;opacity:.4">🚀 MULAI UJIAN</button>
+  </div>
+</div>
+
+<div class="wrap hidden" id="identityScreen">
+  <div class="card">
+    <h2 style="font-size:18px;margin-bottom:6px">📋 Data Taruna</h2>
+    <p style="color:var(--dim);font-size:12.5px;line-height:1.6">Mata kuliah: <b id="idSubjectName" style="color:var(--accent)">—</b></p>
+    <div class="idform">
+      <div><label>Nama Lengkap *</label><input type="text" id="inNama" placeholder="Contoh: Ahmad Rizky Pratama"></div>
+      <div class="idgrid2">
+        <div><label>NIT *</label><input type="text" id="inNIT" placeholder="Contoh: 12345678"></div>
+        <div><label>Semester *</label>
+          <select id="inSemester">
+            <option value="">- Pilih -</option>
+            <option>1A</option><option>1B</option><option>2A</option><option>2B</option>
+            <option>3A</option><option>3B</option><option>4A</option><option>4B</option>
+          </select>
+        </div>
+      </div>
+      <div><label>Jurusan *</label>
+        <select id="inJurusan">
+          <option value="">- Pilih -</option>
+          <option>Teknika</option>
+          <option>ETO (Electro Technical Officer)</option>
+          <option>TRPK (Teknika UHT)</option>
+          <option>Nautika</option>
+          <option>KALK</option>
+          <option>MLP</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:20px">
+      <button type="button" class="btn ghost" id="btnBackStart" style="flex:1">← Kembali</button>
+      <button type="button" class="btn primary" id="btnConfirmId" style="flex:2">Lanjut ke Ujian →</button>
+    </div>
+    <div id="idError" style="color:var(--red);font-size:12px;margin-top:10px;display:none">⚠ Mohon lengkapi semua data.</div>
+  </div>
+</div>
+
+<div class="wrap hidden" id="quizScreen">
+  <div class="qbar">
+    <div class="num">SOAL <span id="curNum">1</span>/<span id="totNum">100</span></div>
+    <div class="track"><i id="progressBar"></i></div>
+  </div>
+  <div class="card">
+    <div class="tagrow">
+      <span class="tag m" id="qModule">MODUL 1</span>
+      <span class="tag" id="qTopic">—</span>
+      <span class="tag cat" id="qCat">ELECTRICAL</span>
+      <span class="tag attempt" id="qAttempt">PERCOBAAN 1/5</span>
+    </div>
+    <div class="qtext" id="qText">—</div>
+    <div class="opts" id="qOpts"></div>
+    <div class="navrow">
+      <button type="button" class="btn ghost" id="btnPrev">← Sebelumnya</button>
+      <button type="button" class="btn warn" id="btnFinishNow">✓ Selesai Sekarang</button>
+      <button type="button" class="btn" id="btnNext">Selanjutnya →</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap hidden" id="resultScreen">
+  <div id="printArea">
+    <div class="result-header">
+      <div class="result-id">
+        <b>POLTEKPEL SURABAYA</b><br>
+        <span>MARITEST — <span id="resSubject">—</span></span><br>
+        <span id="resDate">—</span>
+      </div>
+      <div class="result-id" style="text-align:right">
+        <span>Dosen Pengampu:</span><br>
+        <b>Rafael Sukirno, CE</b>
+      </div>
+    </div>
+    <div class="idcard">
+      <div><b>Nama:</b> <span id="resNama">—</span></div>
+      <div><b>NIT:</b> <span id="resNIT">—</span></div>
+      <div><b>Jurusan:</b> <span id="resJurusan">—</span> &nbsp;•&nbsp; <b>Semester:</b> <span id="resSemester">—</span></div>
+      <div><b>Jumlah Soal:</b> <span id="resJumlah">100</span> soal (total dinilai dari 100)</div>
+    </div>
+    <div style="text-align:center">
+      <div class="attempt-badge" id="resAttemptBadge">Percobaan ke-1</div>
+      <div class="ring" id="ring"><div class="inner"><div class="val" id="resScore">0</div><div class="sub">SKOR</div></div></div>
+      <div class="grade" id="resGrade">—</div>
+      <div id="verdictWrap"></div>
+      <p id="resMsg" style="color:#000;font-size:12.5px;margin-top:6px"></p>
+    </div>
+    <div class="meta">
+      <div><span>Benar</span><strong id="resOk">0</strong></div>
+      <div><span>Salah</span><strong id="resNo">0</strong></div>
+      <div><span>Kosong</span><strong id="resBlank">0</strong></div>
+      <div><span>Waktu</span><strong id="resTime">00:00</strong></div>
+    </div>
+    <div class="rlist" id="resModules"></div>
+    <div style="margin-top:14px">
+      <h4>📋 Riwayat Percobaan Sesi Ini</h4>
+      <table class="history-table" id="historyTable">
+        <thead><tr><th>#</th><th>Skor</th><th>Benar</th><th>Waktu</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="session-info" id="sessionInfo"></div>
+    <div class="print-answers" id="printAnswers"></div>
+  </div>
+  <div class="result-actions">
+    <button type="button" class="btn primary" id="btnRetry">🔁 Ulangi</button>
+    <button type="button" class="btn" id="btnReview">📖 Review</button>
+    <button type="button" class="btn" id="btnPrint">🖨 Cetak PDF</button>
+    <button type="button" class="btn" id="btnNativePrint">🖨 Print Browser</button>
+    <button type="button" class="btn wa" id="btnWa">📤 Kirim Dosen (WA)</button>
+    <button type="button" class="btn help" id="btnHelpFromResult">❓ Panduan</button>
+    <button type="button" class="btn" id="btnHome">🏠 Home</button>
+  </div>
+  <div class="result-hint">PDF hitam-putih tajam, hanya menampilkan soal yang Anda kerjakan.</div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="dhead">
+    <div>
+      <h4>Navigasi Soal</h4>
+      <div class="legend">
+        <span><i style="background:rgba(0,212,160,.6)"></i>Benar</span>
+        <span><i style="background:rgba(255,77,94,.6)"></i>Salah</span>
+        <span><i style="background:#1f3d59"></i>Belum</span>
+      </div>
+    </div>
+    <button type="button" class="icon-btn" id="btnCloseDrawer">✕</button>
+  </div>
+  <div class="dgrid" id="dgrid"></div>
+</aside>
+
+<script>
+(function(){
+"use strict";
+
+const LETTER = ["A","B","C","D"];
+const TOPIC_DEFAULT = {1:"Modul 1",2:"Modul 2",3:"Modul 3",4:"Modul 4",5:"Modul 5",6:"Modul 6",7:"Modul 7",8:"Modul 8"};
+const WA_DOSEN = "6282143264020";
+const LS_SESSION = "maritest_v14_session";
+const LS_TARUNA = "maritest_v14_taruna";
+const LS_SETTINGS = "maritest_v14_settings";
+
+function isInAppBrowser(){
+  var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+  return /FBAN|FBAV|Instagram|Line\/|WhatsApp|Twitter|TikTok|BytedanceWebview|MicroMessenger|Snapchat|Pinterest|LinkedIn/i.test(ua);
+}
+
+/* ============================================================
+   BANK SOAL — 4 MATA KULIAH
+   ============================================================ */
+const BANK_KELISTRIKAN = [
+{m:1,t:"Hukum Ohm",c:"E",q:"Tahanan 20 Ω dialiri arus 3 A. Tegangan pada tahanan tersebut adalah…",o:["60 V","6,67 V","23 V","0,15 V"],a:0,e:"V = I × R = 3 × 20 = 60 V."},
+{m:1,t:"Rangkaian Paralel",c:"E",q:"Tiga resistor 6 Ω diparalel. Tahanan totalnya…",o:["18 Ω","3 Ω","2 Ω","6 Ω"],a:2,e:"1/Rt = 3/6 → Rt = 2 Ω."},
+{m:1,t:"Daya Listrik",c:"E",q:"Beban 220 V, arus 5 A. Daya yang diserap…",o:["44 W","1100 W","225 W","0,0227 W"],a:1,e:"P = V × I = 1100 W."},
+{m:1,t:"KCL",c:"E",q:"Hukum Kirchhoff I menyatakan…",o:["Σ tegangan loop = nol","Σ arus masuk = Σ arus keluar","V sebanding R","P = V × I"],a:1,e:"KCL."},
+{m:1,t:"KVL",c:"E",q:"Hukum Kirchhoff II menyatakan…",o:["Σ ggl = Σ drop tegangan dalam loop tertutup","Σ arus masuk = Σ arus keluar","V = I × R","P = V × I"],a:0,e:"KVL."},
+{m:1,t:"Konduktansi",c:"E",q:"Satuan SI konduktansi listrik…",o:["Ohm","Henry","Siemens","Farad"],a:2,e:"Siemens."},
+{m:1,t:"Seri",c:"E",q:"Resistor 4 Ω dan 12 Ω seri pada 32 V. Arus yang mengalir…",o:["0,5 A","2 A","2,67 A","8 A"],a:1,e:"Rt = 16 Ω; I = 2 A."},
+{m:1,t:"Kapasitor",c:"EL",q:"Kapasitor 100 µF diberi 50 V. Muatan tersimpan…",o:["0,5 mC","50 mC","5 mC","500 mC"],a:2,e:"Q = C × V = 5 mC."},
+{m:1,t:"XL",c:"E",q:"Induktor 0,1 H pada 50 Hz. XL = …",o:["5 Ω","314 Ω","15,7 Ω","31,4 Ω"],a:3,e:"XL = 2πfL = 31,4 Ω."},
+{m:1,t:"XC",c:"E",q:"Kapasitor 100 µF pada 50 Hz. XC = …",o:["31,8 Ω","318 Ω","3,18 Ω","63,6 Ω"],a:0,e:"XC ≈ 31,8 Ω."},
+{m:1,t:"Induktif",c:"E",q:"Beban induktif murni AC, arus listrik…",o:["Searah tegangan","Mendahului 90°","Tertinggal 90°","Tertinggal 45°"],a:2,e:"Lagging 90°."},
+{m:1,t:"Kapasitif",c:"E",q:"Beban kapasitif murni AC, arus listrik…",o:["Searah","Mendahului 90°","Tertinggal 90°","Tertinggal 45°"],a:1,e:"Leading 90°."},
+{m:1,t:"Faktor Daya",c:"E",q:"P = 880 W, S = 1100 VA. cos φ = …",o:["1,25","0,5","0,75","0,8"],a:3,e:"0,8."},
+{m:1,t:"Amperemeter",c:"E",q:"Alat ukur yang dipasang seri untuk mengukur arus…",o:["Voltmeter","Ohmmeter","Amperemeter","Wattmeter"],a:2,e:"Amperemeter."},
+{m:1,t:"Hambatan Lampu",c:"E",q:"Lampu 100 W/220 V. R = …",o:["220 Ω","484 Ω","48,4 Ω","22 Ω"],a:1,e:"R = V²/P = 484 Ω."},
+{m:1,t:"3 Fasa",c:"E",q:"Beban bintang seimbang…",o:["VL = Vph","VL = √3 × Vph","VL = Vph/√3","VL = 3 Vph"],a:1,e:"VL = √3 × Vph."},
+{m:1,t:"Energi",c:"E",q:"1 kWh = … Joule",o:["3,6×10³","360","3,6×10⁶","1000"],a:2,e:"3,6×10⁶ J."},
+{m:1,t:"Dioda",c:"EL",q:"Dioda berfungsi utama sebagai…",o:["Penguat","Penyearah AC → DC","Penyimpan muatan","Pembagi tegangan"],a:1,e:"Penyearah."},
+{m:1,t:"Transistor",c:"EL",q:"Transistor NPN sebagai saklar bila…",o:["VBE cut-off","Arus basis cukup untuk saturasi","Kolektor dibalik","Basis-emitor dihubung singkat"],a:1,e:"Saturasi."},
+{m:1,t:"SCR",c:"EL",q:"SCR konduksi bila…",o:["Anode–katode negatif","Ada pulsa trigger gate saat anode positif","Suhu rendah","Arus gate nol"],a:1,e:"Trigger gate."},
+{m:1,t:"Op-Amp",c:"EL",q:"Op-amp ideal memiliki…",o:["Zin rendah","Zin & gain tak terhingga","Zout tak terhingga","Catu tunggal"],a:1,e:"Zin=∞."},
+{m:1,t:"IC 555",c:"EL",q:"IC 555 dipakai untuk…",o:["Penguat daya","Timer & osilator","Penyearah besar","Regulator"],a:1,e:"Timer."},
+{m:1,t:"Resistor",c:"EL",q:"Resistor coklat-hitam-merah-emas = …",o:["100 Ω ±5%","1000 Ω ±5%","10 Ω ±5%","1 MΩ ±5%"],a:1,e:"1000 Ω."},
+{m:2,t:"Sumber Utama",c:"E",q:"Sumber tenaga listrik utama di kapal…",o:["Baterai","Sel surya","Diesel generator","Turbin angin"],a:2,e:"Genset."},
+{m:2,t:"Penerangan",c:"E",q:"Tegangan distribusi penerangan kapal…",o:["24 V","110/220 V","450 V","6,6 kV"],a:1,e:"110/220 V."},
+{m:2,t:"Jaringan",c:"E",q:"Sistem distribusi paling umum di kapal…",o:["Cincin","Radial","Mesh","Seri"],a:1,e:"Radial."},
+{m:2,t:"Emergency Gen",c:"E",q:"Emergency gen ambil beban maksimal dalam…",o:["5 menit","1 menit","45 detik","30 menit"],a:2,e:"45 detik."},
+{m:2,t:"Trafo",c:"E",q:"Fungsi trafo pada distribusi kapal…",o:["Ubah frekuensi","Searahkan arus","Simpan energi","Ubah tegangan AC"],a:3,e:"Ubah V AC."},
+{m:2,t:"Beban Esensial",c:"E",q:"Yang termasuk beban esensial…",o:["Lampu kabin","TV","Steering gear & fire pump","AC kamar"],a:2,e:"Keselamatan."},
+{m:2,t:"Shore Con",c:"E",q:"Shore connection berfungsi…",o:["Nyalakan mesin","Isi BBM","Isi udara","Terima suplai dari darat"],a:3,e:"Suplai darat."},
+{m:2,t:"Busbar",c:"E",q:"Fungsi busbar pada switchboard…",o:["Proteksi","Ukur daya","Distribusi tegangan bersama","Pendingin"],a:2,e:"Distribusi."},
+{m:2,t:"Frekuensi",c:"E",q:"Frekuensi standar listrik kapal…",o:["25 Hz","50/60 Hz","100 Hz","400 Hz"],a:1,e:"50/60 Hz."},
+{m:2,t:"Sinkron",c:"E",q:"Sinkronisasi generator mensyaratkan…",o:["V saja","f saja","V, f, fasa, urutan sama","Daya sama"],a:2,e:"Sinkron."},
+{m:2,t:"MCB",c:"E",q:"MCB memutus rangkaian saat…",o:["V turun","Hubung singkat / beban lebih","f naik","Daya turun"],a:1,e:"Korsleting."},
+{m:2,t:"Preferential",c:"E",q:"Preferential trip…",o:["Putus semua","Tambah V","Lepas beban non-esensial bertahap","Isi baterai"],a:2,e:"Bertahap."},
+{m:2,t:"Synchroscope",c:"E",q:"Alat cek kesamaan fasa…",o:["Megger","Ohmmeter","Tachometer","Synchroscope"],a:3,e:"Sinkron."},
+{m:2,t:"IT System",c:"E",q:"Sistem distribusi kapal IT artinya…",o:["Netral ditanahkan langsung","Netral tidak ditanahkan","Netral ke fasa","Netral mengapung"],a:1,e:"IT."},
+{m:2,t:"Load Shedding",c:"E",q:"Tujuan load shedding…",o:["Tambah beban","Cegah overload","Naikkan f","Isi baterai"],a:1,e:"Cegah overload."},
+{m:2,t:"Shore Supply",c:"E",q:"Frekuensi shore supply umumnya…",o:["50 Hz atau 60 Hz","100 Hz","400 Hz","25 Hz"],a:0,e:"50/60 Hz."},
+{m:2,t:"Perbaikan PF",c:"E",q:"Kapasitor bank pada instalasi untuk…",o:["Perbaiki faktor daya","Tambah tegangan","Searah arus","Simpan energi"],a:0,e:"Perbaiki cos φ."},
+{m:2,t:"Distribusi",c:"E",q:"MSB = …",o:["Main Switchboard","Motor Starting Box","Marine Supply Board","Main Sensor Box"],a:0,e:"Main Switchboard."},
+{m:2,t:"Emg Switchboard",c:"E",q:"Letak emergency switchboard…",o:["Dalam kamar mesin","Di geladak cuaca / luar kamar mesin","Di palka","Di tangki"],a:1,e:"Luar kamar mesin."},
+{m:2,t:"Generator Kapal",c:"E",q:"Tegangan keluaran generator kapal umumnya…",o:["24 V","110 V","380/450 V","6,6 kV"],a:2,e:"380/450 V."},
+{m:2,t:"Kabel Feeder",c:"E",q:"Fungsi feeder pada sistem distribusi…",o:["Menyuplai panel dari busbar","Menyimpan energi","Mengukur daya","Melindungi kabel"],a:0,e:"Sumber suplai."},
+{m:2,t:"Panel Distribusi",c:"E",q:"Fungsi distribution panel…",o:["Bagi daya ke grup beban","Simpan energi","Ukur suhu","Pendingin"],a:0,e:"Bagi beban."},
+{m:2,t:"Konsumsi BBM",c:"E",q:"Genset diesel kapal memakai bahan bakar…",o:["Bensin","MDO/MFO","Minyak tanah","Gas"],a:1,e:"MDO/MFO."},
+{m:3,t:"Generator",c:"E",q:"Prinsip kerja generator berdasarkan…",o:["Hukum Ohm","Hukum Boyle","Hukum Faraday","Hukum Archimedes"],a:2,e:"Faraday."},
+{m:3,t:"Motor Induksi",c:"E",q:"Motor AC paling umum untuk pompa kapal…",o:["Sinkron","DC seri","Stepper","Induksi 3 fasa"],a:3,e:"Induksi 3 fasa."},
+{m:3,t:"ns",c:"E",q:"Motor induksi 50 Hz, 4 kutub. ns = …",o:["3000","1500","750","1000"],a:1,e:"1500 rpm."},
+{m:3,t:"Slip",c:"E",q:"Motor 4 kutub 50 Hz pada 1440 rpm. Slip = …",o:["2%","4%","5%","6%"],a:1,e:"4%."},
+{m:3,t:"Balik Arah",c:"E",q:"Cara membalik arah motor induksi 3 fasa…",o:["Tambah V","Kurangi f","Tukar 2 kabel fasa","Ganti rotor"],a:2,e:"Tukar 2 fasa."},
+{m:3,t:"DC Seri",c:"E",q:"Motor DC cocok untuk crane…",o:["Shunt","Seri","Kompon","Magnet permanen"],a:1,e:"DC seri."},
+{m:3,t:"Starting R",c:"E",q:"Fungsi starting resistor motor DC…",o:["Tambah torsi","Naikkan V","Kurangi rpm","Batasi arus start"],a:3,e:"Batasi arus."},
+{m:3,t:"Trafo",c:"E",q:"Trafo N1=500, N2=100, V1=220 V. V2=…",o:["44 V","110 V","55 V","22 V"],a:0,e:"44 V."},
+{m:3,t:"Rugi Trafo",c:"E",q:"Rugi Eddy + histeresis disebut…",o:["Rugi tembaga","Rugi mekanik","Rugi inti","Rugi angin"],a:2,e:"Rugi inti."},
+{m:3,t:"Kutub",c:"E",q:"Generator 1500 rpm, f=50 Hz. p = …",o:["2","6","4","8"],a:2,e:"p = 4."},
+{m:3,t:"AVR",c:"EL",q:"Fungsi AVR pada generator…",o:["Atur rpm","Jaga V keluaran stabil","Atur BBM","Atur suhu"],a:1,e:"Stabilkan V."},
+{m:3,t:"Bintang",c:"E",q:"Motor bintang pada 380 V. Vph = …",o:["380 V","190 V","220 V","660 V"],a:2,e:"220 V."},
+{m:3,t:"Megger",c:"E",q:"Alat ukur tahanan isolasi…",o:["Multimeter","Tang amper","Megger","Oscilloscope"],a:2,e:"Megger."},
+{m:3,t:"Motor Sinkron",c:"E",q:"Keunggulan motor sinkron…",o:["Murah","Kecepatan konstan","Tak perlu eksitasi","Tak perlu starting"],a:1,e:"Konstan."},
+{m:3,t:"Motor Rotor",c:"E",q:"Jenis rotor motor induksi…",o:["Squirrel cage & wound rotor","Magnet permanen","Seri","Shunt"],a:0,e:"SCIM & WRIM."},
+{m:3,t:"Starting Motor",c:"E",q:"Metode starting motor induksi…",o:["DOL, star-delta, soft starter, autotransformer","Hanya DOL","Hanya star-delta","Tidak ada"],a:0,e:"Beberapa metode."},
+{m:3,t:"DOL",c:"E",q:"DOL = …",o:["Direct On Line","Dual On Load","Digital Output Level","Drive On Line"],a:0,e:"Direct On Line."},
+{m:3,t:"Star Delta",c:"E",q:"Tujuan star-delta starting…",o:["Menurunkan arus start","Menaikkan torsi","Naikkan rpm","Kurangi rpm"],a:0,e:"Kurangi arus start."},
+{m:3,t:"Soft Starter",c:"EL",q:"Fungsi soft starter…",o:["Start halus tanpa lonjakan arus","Menaikkan rpm maks","Reverse motor","Stop darurat"],a:0,e:"Start halus."},
+{m:3,t:"VFD",c:"EL",q:"Fungsi VFD pada motor induksi…",o:["Atur kecepatan motor","Proteksi korsleting","Ukur daya","Simpan energi"],a:0,e:"Atur rpm."},
+{m:3,t:"Torsi DC Seri",c:"E",q:"Torsi start motor DC seri…",o:["Kecil","Sedang","Sangat besar","Nol"],a:2,e:"Sangat besar."},
+{m:3,t:"Motor Shunt",c:"E",q:"Karakteristik motor DC shunt…",o:["Rpm hampir konstan","Rpm naik tajam","Rpm nol","Rpm turun tajam"],a:0,e:"Rpm stabil."},
+{m:3,t:"Motor PM",c:"E",q:"Motor magnet permanen tidak butuh…",o:["Kumparan medan","Rotor","Stator","Kabel"],a:0,e:"Tanpa field winding."},
+{m:4,t:"Standar Kabel",c:"E",q:"Kabel kapal harus memenuhi standar…",o:["SNI biasa","IEC 60228 / marine","Otomotif","Tidak ada"],a:1,e:"Marine."},
+{m:4,t:"Warna Fasa",c:"E",q:"Warna konduktor fasa…",o:["Hijau-kuning","Biru","Putih","Coklat/hitam/abu-abu"],a:3,e:"Coklat/hitam/abu."},
+{m:4,t:"Warna Ground",c:"E",q:"Kabel hijau-kuning menandakan…",o:["Fasa","Netral","Pentanahan","Positif"],a:2,e:"Grounding."},
+{m:4,t:"Cable Tray",c:"E",q:"Fungsi cable tray…",o:["Kabel rapi & terlindung","Sambung kabel","Ukur arus","Putus arus"],a:0,e:"Rapi."},
+{m:4,t:"Cable Gland",c:"E",q:"Fungsi cable gland…",o:["Sambung 2 kabel","Ukur tegangan","Percepat arus","Kunci kabel di panel, watertight"],a:3,e:"Watertight."},
+{m:4,t:"Isolasi Panas",c:"E",q:"Kabel di ruang mesin tahan panas minimal…",o:["60°C","70°C","85°C atau lebih","30°C"],a:2,e:"85°C+."},
+{m:4,t:"Penampang",c:"E",q:"Luas penampang didasarkan pada…",o:["Warna","Berat","KHA & panjang kabel","Umur"],a:2,e:"KHA."},
+{m:4,t:"Drop Tegangan",c:"E",q:"Susut tegangan penerangan kapal maks…",o:["2,5%","5%","10%","15%"],a:1,e:"~5%."},
+{m:4,t:"Rute Kabel",c:"E",q:"Yang harus dihindari saat pasang kabel…",o:["Dekat tangki BBM & panas tanpa pelindung","Ruang pendingin","Kamar mesin","Anjungan"],a:0,e:"Jauh dari panas."},
+{m:4,t:"Isolasi Rusak",c:"E",q:"Isolasi kabel terkelupas menyebabkan…",o:["V naik","f turun","Daya naik","Hubung singkat & kebakaran"],a:3,e:"Korsleting."},
+{m:4,t:"Junction Box",c:"E",q:"Fungsi junction box…",o:["Sumber tegangan","Tempat sambung kabel","Alat ukur","Alat pengaman"],a:1,e:"Sambungan."},
+{m:4,t:"Kabel Marine",c:"E",q:"Keunggulan kabel marine…",o:["Tahan api, minyak, garam","Murah","Ringan","Kecil"],a:0,e:"Tahan ekstrem."},
+{m:4,t:"Konduktor",c:"E",q:"Bahan konduktor kabel umumnya…",o:["Tembaga","Besi","Kayu","Karet"],a:0,e:"Tembaga."},
+{m:4,t:"Isolasi Kabel",c:"EL",q:"Bahan isolasi kabel umumnya…",o:["PVC, XLPE, EPR","Besi","Tembaga","Air"],a:0,e:"PVC/XLPE/EPR."},
+{m:4,t:"Grounding Kabel",c:"E",q:"Grounding kabel = menghubungkan ke…",o:["Lambung kapal","Fasa","Netral","Sumber"],a:0,e:"Lambung."},
+{m:4,t:"Pengawatan",c:"E",q:"Sambungan kabel yang baik harus…",o:["Kencang & pakai terminal","Dilipat","Diisolasi tipis","Dibiarkan"],a:0,e:"Terminal."},
+{m:4,t:"Kabel Coaxial",c:"EL",q:"Kabel coaxial digunakan untuk…",o:["Sinyal frekuensi tinggi","Listrik daya","Grounding","Kontrol"],a:0,e:"Sinyal."},
+{m:4,t:"Kabel Kontrol",c:"E",q:"Warna kabel kontrol di kapal umumnya…",o:["Hitam/abu","Merah","Biru","Kuning"],a:0,e:"Hitam/abu."},
+{m:4,t:"Kabel Daya",c:"E",q:"Kabel daya di kapal berisolasi tebal karena…",o:["Menahan tegangan & arus besar","Ringan","Murah","Kecil"],a:0,e:"Tegangan besar."},
+{m:4,t:"Pemasangan",c:"E",q:"Kabel di geladak harus…",o:["Dilindungi conduit / tray","Dibiarkan","Dilipat","Diikat sembarangan"],a:0,e:"Conduit/tray."},
+{m:4,t:"Sealing",c:"E",q:"Sealing kabel pada bulkhead berfungsi…",o:["Mencegah air/gas lewat","Mempercepat arus","Mendinginkan","Mengukur"],a:0,e:"Anti bocor."},
+{m:4,t:"Test Isolasi",c:"E",q:"Sebelum energize, kabel harus…",o:["Diuji megger","Dilipat","Dipotong","Dibakar"],a:0,e:"Uji megger."},
+{m:5,t:"MSB",c:"E",q:"Fungsi utama MSB…",o:["Simpan BBM","Dinginkan mesin","Terima daya genset & distribusi","Ukur kedalaman"],a:2,e:"Pusat distribusi."},
+{m:5,t:"Thermal OL",c:"E",q:"Proteksi berdasarkan panas berlebih…",o:["Thermal overload relay","Fuse","Kontaktor","Timer"],a:0,e:"Bimetal."},
+{m:5,t:"Fuse",c:"E",q:"Sekering bekerja dengan cara…",o:["Kontak elektromagnet","Elemen lebur meleleh","Tutup rangkaian","Turunkan V"],a:1,e:"Elemen lebur."},
+{m:5,t:"MCB C16",c:"E",q:"MCB C16 menunjukkan…",o:["16 V","16 W","16 Ω","16 A kurva C"],a:3,e:"16 A."},
+{m:5,t:"Kontaktor",c:"E",q:"Fungsi kontaktor…",o:["Ukur arus","Stabilkan V","Simpan energi","Saklar elektromagnetik"],a:3,e:"Elektromagnetik."},
+{m:5,t:"Self Holding",c:"E",q:"Rangkaian kontrol aktif terus setelah start dilepas…",o:["Interlock","Timer","Self holding","DOL"],a:2,e:"Self holding."},
+{m:5,t:"Interlock",c:"E",q:"Interlock maju-mundur mencegah…",o:["2 kontaktor aktif bersamaan","Rpm tinggi","Arus start","Lampu nyala"],a:0,e:"Cegah korsleting."},
+{m:5,t:"ELCB",c:"EL",q:"Alat deteksi arus bocor ke tanah…",o:["MCB","ELCB/RCD","Kontaktor","Timer"],a:1,e:"ELCB."},
+{m:5,t:"Earth Fault",c:"E",q:"Gangguan earth fault ditandai…",o:["Mesin mati","f naik","V naik","Lampu indikator earth fault"],a:3,e:"Indikator."},
+{m:5,t:"Amperemeter",c:"E",q:"Fungsi amperemeter di panel…",o:["Ukur V","Ukur daya","Ukur arus","Ukur f"],a:2,e:"Arus."},
+{m:5,t:"Wattmeter",c:"E",q:"Alat ukur daya listrik…",o:["Voltmeter","Wattmeter","Amperemeter","Megger"],a:1,e:"Wattmeter."},
+{m:5,t:"Freq Meter",c:"E",q:"Instrumentasi yang menunjukkan frekuensi…",o:["Frequency meter","Synchroscope","Voltmeter","Wattmeter"],a:0,e:"Hz."},
+{m:5,t:"Voltmeter",c:"E",q:"Voltmeter dipasang…",o:["Paralel","Seri","Campuran","Bebas"],a:0,e:"Paralel."},
+{m:5,t:"Over Current",c:"E",q:"Proteksi over current = …",o:["OCR","OVR","UVR","EFR"],a:0,e:"OCR."},
+{m:5,t:"Under Voltage",c:"E",q:"Proteksi undervoltage berfungsi…",o:["Cegah motor rusak saat V turun","Tambah V","Ukur V","Stop darurat"],a:0,e:"Cegah rusak."},
+{m:5,t:"Reverse Power",c:"E",q:"Reverse power relay untuk…",o:["Cegah generator jadi motor","Tambah daya","Ukur V","Stop darurat"],a:0,e:"Cegah motoring."},
+{m:5,t:"Differential",c:"E",q:"Proteksi differensial untuk…",o:["Deteksi gangguan internal trafo/generator","Tambah V","Ukur arus","Overload"],a:0,e:"Internal fault."},
+{m:5,t:"Buchholz",c:"E",q:"Relay Buchholz dipakai pada…",o:["Trafo berisi minyak","Motor","Generator","Panel"],a:0,e:"Trafo."},
+{m:5,t:"CB",c:"E",q:"Circuit Breaker berfungsi…",o:["Putus rangkaian saat gangguan","Tambah tegangan","Ukur arus","Simpan energi"],a:0,e:"Putus gangguan."},
+{m:5,t:"Isolator",c:"E",q:"Fungsi isolator pada panel…",o:["Memisahkan konduktor dari body","Tambah V","Hiasan","Alat ukur"],a:0,e:"Isolasi."},
+{m:5,t:"Busbar Material",c:"E",q:"Busbar terbuat dari…",o:["Tembaga/aluminium","Besi","Kayu","PVC"],a:0,e:"Tembaga."},
+{m:5,t:"Panel Sinkron",c:"E",q:"Panel untuk paralel generator…",o:["Sinkronisasi panel","Distribution panel","Emergency panel","Group starter"],a:0,e:"Sinkron panel."},
+{m:6,t:"Sensor Level",c:"EL",q:"Sensor untuk deteksi ketinggian cairan…",o:["Thermocouple","Proximity","Level/float switch","Photo"],a:2,e:"Float switch."},
+{m:6,t:"Thermocouple",c:"EL",q:"Sensor suhu dari perbedaan tegangan 2 logam…",o:["RTD","Thermocouple","LDR","Strain gauge"],a:1,e:"Seebeck."},
+{m:6,t:"RTD",c:"EL",q:"RTD bekerja berdasarkan…",o:["Cahaya","Tekanan","Frekuensi","Tahanan vs suhu"],a:3,e:"Tahanan."},
+{m:6,t:"Press Sensor",c:"EL",q:"Sensor tekanan mengubah tekanan menjadi…",o:["Suara","Sinyal listrik 4–20 mA","Cahaya","Mekanik"],a:1,e:"4–20 mA."},
+{m:6,t:"Standar Sinyal",c:"EL",q:"Standar sinyal analog instrumentasi kapal…",o:["0–1 V","1–5 A","4–20 mA","0–100 mA"],a:2,e:"4–20 mA."},
+{m:6,t:"High Temp",c:"EL",q:"Alarm saat suhu mesin lewat batas…",o:["Low level","Earth fault","Overload","High temperature"],a:3,e:"High temp."},
+{m:6,t:"Dead Band",c:"EL",q:"Fungsi dead band pada alarm…",o:["Percepat respon","Cegah alarm berulang di sekitar set point","Tambah volume","Matikan sensor"],a:1,e:"Chatter."},
+{m:6,t:"Proximity",c:"EL",q:"Sensor deteksi logam tanpa kontak…",o:["Thermistor","Load cell","Flow meter","Proximity induktif"],a:3,e:"Induktif."},
+{m:6,t:"Acknowledge",c:"EL",q:"Tombol Acknowledge…",o:["Matikan sistem","Tambah alarm","Akui alarm, matikan suara, indikator tetap","Reset semua"],a:2,e:"Akui."},
+{m:6,t:"Flow Meter",c:"EL",q:"Flow meter mengukur…",o:["Suhu","Tekanan","Level","Laju aliran"],a:3,e:"Aliran."},
+{m:6,t:"Kontrol Level",c:"EL",q:"Sistem start/stop pompa berdasarkan…",o:["Suhu","Level otomatis","Daya","Kecepatan"],a:1,e:"Level."},
+{m:6,t:"Smoke Det",c:"EL",q:"Sensor deteksi asap…",o:["Float switch","RTD","Smoke detector","Proximity"],a:2,e:"Smoke det."},
+{m:6,t:"PLC",c:"EL",q:"Fungsi PLC…",o:["Ukur V","Proteksi arus","Backup daya","Pengendali logika terprogram"],a:3,e:"PLC."},
+{m:6,t:"Encoder",c:"EL",q:"Encoder pada motor berfungsi…",o:["Ukur arus","Deteksi posisi & kecepatan","Ukur suhu","Atur V"],a:1,e:"Posisi/rpm."},
+{m:6,t:"PWM",c:"EL",q:"PWM mengatur kecepatan motor DC dengan…",o:["Ubah f","Ubah duty cycle","Searahkan AC","Stabilkan V"],a:1,e:"Duty cycle."},
+{m:6,t:"HMI",c:"EL",q:"HMI berfungsi sebagai…",o:["Ukur arus","Antarmuka operator ↔ sistem","Simpan data","Gerakkan motor"],a:1,e:"Antarmuka."},
+{m:6,t:"SCADA",c:"EL",q:"SCADA untuk…",o:["Ukur isolasi","Monitoring & kontrol terpusat","Isi baterai","Atur BBM"],a:1,e:"Kontrol terpusat."},
+{m:6,t:"Analog/Digital",c:"EL",q:"Perbedaan sinyal analog & digital…",o:["Analog kontinu, digital diskrit","Analog diskrit, digital kontinu","Keduanya kontinu","Keduanya digital"],a:0,e:"Analog kontinu."},
+{m:6,t:"Transmitter",c:"EL",q:"Fungsi transmitter…",o:["Ubah sinyal sensor jadi standar","Tambah tegangan","Pendingin","Simpan"],a:0,e:"Standarisasi."},
+{m:6,t:"Controller",c:"EL",q:"Fungsi controller…",o:["Bandingkan SP & PV → perintah aktuator","Ukur V","Pendingin","Simpan"],a:0,e:"Kendali."},
+{m:6,t:"PID",c:"EL",q:"PID adalah…",o:["Proportional Integral Derivative","Primary Input Digital","Push Input Data","Power In Device"],a:0,e:"P I D."},
+{m:6,t:"Open Loop",c:"EL",q:"Open loop artinya…",o:["Tanpa feedback","Ada feedback","Otomatis","Manual"],a:0,e:"Tanpa FB."},
+{m:6,t:"Closed Loop",c:"EL",q:"Closed loop artinya…",o:["Dengan feedback","Tanpa feedback","Manual","Mati"],a:0,e:"Ada FB."},
+{m:7,t:"Baterai",c:"E",q:"Jenis baterai umum untuk darurat kapal…",o:["Lithium polymer","Lead acid / Ni-Cd","Alkaline kecil","Sel bahan bakar"],a:1,e:"Lead acid."},
+{m:7,t:"Sel V",c:"E",q:"Tegangan nominal 1 sel lead acid…",o:["1,5 V","3,7 V","2 V","12 V"],a:2,e:"2 V."},
+{m:7,t:"Berat Jenis",c:"E",q:"Berat jenis elektrolit penuh…",o:["1,100","1,500","1,280","1,200"],a:2,e:"1,280."},
+{m:7,t:"Charger",c:"E",q:"Fungsi battery charger…",o:["Kosongkan","Ukur V","Ubah DC→AC","Isi baterai dari AC"],a:3,e:"Isi."},
+{m:7,t:"Kapasitas",c:"E",q:"Kapasitas baterai satuannya…",o:["Volt","Ah","Watt","Ohm"],a:1,e:"Ah."},
+{m:7,t:"Waktu",c:"E",q:"Baterai 100 Ah, beban 20 A. Habis dalam…",o:["20 jam","2 jam","5 jam","2000 jam"],a:2,e:"5 jam."},
+{m:7,t:"Gas",c:"E",q:"Saat charging keluar gas…",o:["Nitrogen","Helium","H₂ & O₂","CO"],a:2,e:"H₂ & O₂."},
+{m:7,t:"Emergency",c:"E",q:"Sumber daya darurat ditempatkan…",o:["Dalam kamar mesin","Bawah kamar mesin","Dalam palka","Luar kamar mesin"],a:3,e:"Luar KM."},
+{m:7,t:"DC 24V",c:"E",q:"Sistem DC 24 V untuk…",o:["Mesin induk","Winch","Kontrol, alarm, penerangan darurat","Bow thruster"],a:2,e:"Kontrol."},
+{m:7,t:"Rectifier",c:"EL",q:"Rectifier berfungsi…",o:["DC→AC","Naikkan f","Turunkan R","AC→DC"],a:3,e:"AC→DC."},
+{m:7,t:"Inverter",c:"EL",q:"Inverter berfungsi…",o:["AC→DC","DC→AC","Simpan daya","Ukur daya"],a:1,e:"DC→AC."},
+{m:7,t:"Buck",c:"EL",q:"Konverter buck berfungsi…",o:["Naikkan V DC","Turunkan V DC","DC→AC","AC→DC"],a:1,e:"Step down."},
+{m:7,t:"Boost",c:"EL",q:"Konverter boost berfungsi…",o:["Naikkan V DC","Turunkan V DC","DC→AC","AC→DC"],a:0,e:"Step up."},
+{m:7,t:"Li-ion",c:"EL",q:"Keunggulan baterai lithium…",o:["Lebih murah","Energy density tinggi & cycle life panjang","Tak perlu BMS","V sel rendah"],a:1,e:"Energy tinggi."},
+{m:7,t:"BMS",c:"EL",q:"BMS pada baterai lithium…",o:["Battery Management System","Basic Motor Start","Base Main Switch","Battery Motor Sensor"],a:0,e:"BMS."},
+{m:7,t:"Maintenance",c:"E",q:"Perawatan baterai lead acid…",o:["Cek BJ elektrolit & level air","Dikuras","Dipanaskan","Dibiarkan"],a:0,e:"Cek BJ."},
+{m:7,t:"Overcharge",c:"E",q:"Bahaya overcharge baterai…",o:["Gas berlebih & panas","Dingin","Tenang","Tidak apa"],a:0,e:"Gas & panas."},
+{m:7,t:"Dioda Baterai",c:"EL",q:"Fungsi dioda pada charger…",o:["Cegah arus balik","Tambah V","Ukur V","Simpan"],a:0,e:"Cegah balik."},
+{m:7,t:"CCA",c:"E",q:"CCA baterai menunjukkan…",o:["Kemampuan start mesin dingin","Kapasitas","Tegangan","Arus bocor"],a:0,e:"Start dingin."},
+{m:7,t:"Ventilasi",c:"E",q:"Ruang baterai harus…",o:["Berventilasi baik","Kedap","Panas","Basah"],a:0,e:"Ventilasi."},
+{m:7,t:"12V Baterai",c:"E",q:"Baterai 12 V terdiri atas…",o:["6 sel seri","3 sel","4 sel","8 sel"],a:0,e:"6 sel."},
+{m:8,t:"GA",c:"E",q:"GA kapal adalah…",o:["Gambar mesin","Gambar rangkaian listrik","Gambar tata letak umum ruangan & peralatan","Gambar propeller"],a:2,e:"Tata letak."},
+{m:8,t:"Kamar Mesin",c:"E",q:"Kamar mesin umumnya…",o:["Di haluan","Di buritan/agak belakang","Di atas anjungan","Tengah palka"],a:1,e:"Buritan."},
+{m:8,t:"Grounding",c:"E",q:"Tujuan grounding peralatan listrik…",o:["Tambah daya","Kurangi biaya","Tambah V","Alirkan arus bocor ke lambung/tanah"],a:3,e:"Arus bocor."},
+{m:8,t:"Log Book",c:"E",q:"Fungsi electrical log book…",o:["Simpan gambar","Catat parameter & kejadian","Simpan alat","Inventaris"],a:1,e:"Catat."},
+{m:8,t:"Beban Darurat",c:"E",q:"Yang termasuk beban darurat…",o:["Lampu darurat, alarm, radio","TV","AC","Pompa kargo"],a:0,e:"Darurat."},
+{m:8,t:"PMS",c:"EL",q:"PMS kapal singkatan dari…",o:["Power Management System","Primary Motor Starter","Panel Main Switch","Propulsion Motor Sensor"],a:0,e:"Power Mgmt."},
+{m:8,t:"EMS",c:"EL",q:"EMS kapal singkatan dari…",o:["Energy Management System","Engine Motor Switch","Electric Main Sensor","Emergency Motor Start"],a:0,e:"Energy Mgmt."},
+{m:8,t:"IAMCS",c:"EL",q:"IAMCS singkatan dari…",o:["Integrated Alarm Monitoring & Control System","Internal Auto Motor Control","Integrated Amp Meter Circuit","Internal Alarm Module Control"],a:0,e:"Alarm & kontrol."},
+{m:8,t:"Navigasi",c:"E",q:"Peralatan navigasi memakai suplai…",o:["AC 220V + DC 24V backup","Hanya AC","Hanya DC","Hanya baterai"],a:0,e:"AC + DC."},
+{m:8,t:"Radio Kapal",c:"E",q:"Radio kapal memakai baterai backup untuk…",o:["GMDSS darurat","Musik","TV","Lampu"],a:0,e:"GMDSS."},
+{m:8,t:"Bow Thruster",c:"E",q:"Bow thruster digerakkan…",o:["Motor listrik besar","Mesin diesel langsung","Manual","Angin"],a:0,e:"Motor listrik."},
+{m:8,t:"K3",c:"E",q:"Sebelum kerja panel bertegangan…",o:["LOTO","Buka langsung","Panggil rekan","Bersihkan"],a:0,e:"LOTO."},
+{m:8,t:"APD",c:"E",q:"APD untuk tegangan tinggi…",o:["Sarung tangan & sepatu isolasi, helm","Kacamata biasa","Celemek","Masker kain"],a:0,e:"APD isolasi."},
+{m:8,t:"Pemadam Kelas C",c:"E",q:"Kebakaran listrik dipadamkan dengan…",o:["Air","CO₂ / dry chemical","Pasir basah","Busa air"],a:1,e:"CO₂."},
+{m:8,t:"Isolasi Panel",c:"E",q:"Panel listrik harus memiliki…",o:["Isolasi & grounding","Ventilasi air","Lampu terang","Kunci"],a:0,e:"Isolasi."}
+];
+
+/* Template tambahan soal MPU, Operasional, ECA (base — akan di-expand ke 100) */
+function expandTo100(base){
+  var out = base.slice();
+  var i = 0;
+  while(out.length < 100){
+    var src = base[i % base.length];
+    var copy = JSON.parse(JSON.stringify(src));
+    copy.q = copy.q + " [v" + (Math.floor(i/base.length)+1) + "]";
+    out.push(copy);
+    i++;
+  }
+  return out;
+}
+
+const BANK_MPU_BASE = [
+{m:1,t:"Prinsip Diesel",c:"E",q:"Prinsip kerja mesin diesel 4 langkah secara berurutan…",o:["Hisap–Kompresi–Usaha–Buang","Kompresi–Hisap–Usaha–Buang","Usaha–Buang–Hisap–Kompresi","Buang–Hisap–Kompresi–Usaha"],a:0,e:"4 langkah."},
+{m:1,t:"Kompresi",c:"E",q:"Perbandingan kompresi mesin diesel umumnya…",o:["5:1","12:1 – 22:1","25:1","2:1"],a:1,e:"12–22:1."},
+{m:1,t:"Penyalaan",c:"E",q:"Penyalaan bahan bakar mesin diesel…",o:["Busi","Kompresi udara panas","Magnet","Percikan"],a:1,e:"Kompresi."},
+{m:1,t:"2 Langkah",c:"E",q:"Mesin diesel 2 langkah siklusnya dalam…",o:["4 putaran","1 putaran","2 putaran","3 putaran"],a:1,e:"1 putaran."},
+{m:1,t:"Connecting Rod",c:"E",q:"Yang meneruskan gaya piston ke crankshaft…",o:["Camshaft","Connecting rod","Liner","Head"],a:1,e:"CR."},
+{m:1,t:"Flywheel",c:"E",q:"Fungsi flywheel…",o:["Menambah beban","Menyimpan energi putar & meratakan langkah","Filter oli","Pendingin"],a:1,e:"Simpan energi."},
+{m:1,t:"Turbo",c:"E",q:"Fungsi turbocharger…",o:["Pendingin","Menambah udara masuk","Filter BBM","Kurangi emisi"],a:1,e:"Air masuk."},
+{m:1,t:"Liner",c:"E",q:"Fungsi cylinder liner…",o:["Filter oli","Dinding silinder piston","Pendingin","Simpan udara"],a:1,e:"Dinding silinder."},
+{m:1,t:"Injector",c:"E",q:"Menyemprot BBM ke ruang bakar…",o:["Fuel pump","Injector","Governor","Turbo"],a:1,e:"Injector."},
+{m:1,t:"Governor",c:"EL",q:"Fungsi governor…",o:["Atur suhu","Atur rpm","Filter","Oli"],a:1,e:"Rpm stabil."},
+{m:1,t:"Cooling",c:"E",q:"Fungsi sistem pendingin…",o:["Tambah tenaga","Keluarkan panas mesin","Filter oli","BBM"],a:1,e:"Keluarkan panas."},
+{m:1,t:"FW Closed",c:"E",q:"Sistem pendingin modern…",o:["Air tawar tertutup + air laut sekunder","Air laut langsung","Udara","Oli"],a:0,e:"FW closed."},
+{m:1,t:"Lubrication",c:"E",q:"Fungsi pelumasan…",o:["Pendingin","Kurangi gesekan & dinginkan","Tambah tenaga","Filter"],a:1,e:"Gesekan."},
+{m:1,t:"SAE",c:"E",q:"SAE 15W-40 menunjukkan…",o:["Jenis BBM","Viskositas","Titik nyala","BJ"],a:1,e:"Viskositas."},
+{m:1,t:"FIP",c:"E",q:"Fungsi fuel injection pump…",o:["Filter","Pompa BBM tekanan tinggi ke injector","Pendingin","Simpan"],a:1,e:"Pompa."},
+{m:1,t:"Starting Air",c:"E",q:"Tekanan udara start…",o:["5 bar","10 bar","25–30 bar","100 bar"],a:2,e:"25–30 bar."},
+{m:1,t:"Air Receiver",c:"E",q:"Fungsi air receiver…",o:["Simpan BBM","Simpan udara tekan","Simpan oli","Filter"],a:1,e:"Udara."},
+{m:1,t:"Purging",c:"E",q:"Tujuan purging sebelum start…",o:["Pendingin","Buang gas dari silinder","Tambah BBM","Filter"],a:1,e:"Buang gas."},
+{m:1,t:"Scavenging",c:"E",q:"Fungsi scavenging…",o:["Pendingin","Buang gas buang & isi udara baru","Tambah BBM","Filter"],a:1,e:"Bilas."},
+{m:1,t:"TDC",c:"E",q:"TDC adalah…",o:["Piston di titik tertinggi","Piston di titik terendah","Piston tengah","Piston bebas"],a:0,e:"TMA."},
+{m:2,t:"Start ME",c:"E",q:"Mesin induk start dengan…",o:["Tenaga manusia","Udara tekan","Tali","Pegas"],a:1,e:"Air start."},
+{m:2,t:"Turning Gear",c:"E",q:"Fungsi turning gear…",o:["Putar poros perlahan saat perawatan","Isi BBM","Pendingin","Filter"],a:0,e:"Turning."},
+{m:2,t:"Slow Turning",c:"E",q:"Slow turning sebelum start untuk…",o:["Pendingin","Cek tidak ada air/BBM di silinder","Isi baterai","Buka katup"],a:1,e:"Cek."},
+{m:2,t:"SFOC",c:"E",q:"SFOC satuannya…",o:["L/jam","g/kWh","kg/menit","ton/hari"],a:1,e:"g/kWh."},
+{m:2,t:"HFO",c:"E",q:"BBM utama kapal besar…",o:["Bensin","HFO","Minyak tanah","Solar"],a:1,e:"HFO."},
+{m:2,t:"MDO",c:"E",q:"MDO singkatan…",o:["Marine Diesel Oil","Main DO","Motor DO","Mixed DO"],a:0,e:"MDO."},
+{m:2,t:"Sludge",c:"E",q:"Sludge harus dibuang untuk…",o:["Tambah tenaga","Cegah penyumbatan & kerusakan","Naikkan rpm","Tambah BBM"],a:1,e:"Cegah."},
+{m:2,t:"FO Purifier",c:"E",q:"Fungsi FO purifier…",o:["Tambah BBM","Pisah air & kotoran dari BBM","Pendingin","Filter udara"],a:1,e:"Pisah."},
+{m:2,t:"LO Purifier",c:"E",q:"Fungsi LO purifier…",o:["Tambah oli","Jaga kualitas oli","Pendingin","Filter udara"],a:1,e:"Jaga oli."},
+{m:2,t:"LO Cooler",c:"E",q:"Fungsi LO cooler…",o:["Pendingin oli","Tambah oli","Filter oli","Pisah sludge"],a:0,e:"Dinginkan oli."},
+{m:2,t:"SW Pump",c:"E",q:"Pompa air laut pendingin…",o:["Feed pump","SW cooling pump","Bilge pump","Ballast pump"],a:1,e:"SW cooling."},
+{m:2,t:"FW Pump",c:"E",q:"Pompa air tawar sirkulasi…",o:["SW pump","FW cooling pump","Bilge pump","Ballast"],a:1,e:"FW cooling."},
+{m:2,t:"Air Cooler",c:"E",q:"Fungsi air cooler turbo…",o:["Pendingin udara masuk","Pendingin oli","Filter udara","Tambah BBM"],a:0,e:"Dinginkan udara."},
+{m:2,t:"Cyl Head",c:"E",q:"Fungsi cylinder head…",o:["Tutup atas silinder & tempat katup","Filter oli","Pendingin","Simpan BBM"],a:0,e:"Tutup silinder."},
+{m:2,t:"Piston Ring",c:"E",q:"Fungsi piston ring…",o:["Rapatkan piston & atur pelumasan","Tambah tenaga","Pendingin","Filter oli"],a:0,e:"Rapatkan."},
+{m:2,t:"Main Bearing",c:"E",q:"Fungsi main bearing…",o:["Tumpu crankshaft & kurangi gesekan","Filter oli","Pendingin","Simpan BBM"],a:0,e:"Tumpu."},
+{m:2,t:"Exhaust Valve",c:"E",q:"Katup gas buang…",o:["Inlet valve","Exhaust valve","Injector","Air start valve"],a:1,e:"Exhaust."},
+{m:2,t:"Inlet Valve",c:"E",q:"Katup udara masuk…",o:["Inlet valve","Exhaust valve","Injector","Air start"],a:0,e:"Inlet."},
+{m:2,t:"Pre-Start",c:"E",q:"Yang diperiksa sebelum start…",o:["Level oli, air, BBM, turning gear lepas","TV","Kursi","Pintu"],a:0,e:"Level."},
+{m:2,t:"Running Hour",c:"E",q:"Running hour meter…",o:["Ukur rpm","Catat total jam operasi","Ukur suhu","Ukur tekanan"],a:1,e:"Jam operasi."},
+{m:2,t:"Overheat",c:"E",q:"Penyebab overheating…",o:["BBM cukup","Pendingin kurang, beban lebih, oli kurang","Filter bersih","Udara cukup"],a:1,e:"Pendingin."},
+{m:3,t:"Slow Speed",c:"E",q:"Putaran slow speed…",o:["100–300 rpm","500–800 rpm","1000–1500 rpm","2000+ rpm"],a:0,e:"100–300."},
+{m:3,t:"Medium Speed",c:"E",q:"Putaran medium speed…",o:["100–200 rpm","400–1000 rpm","1500–2000 rpm","3000+ rpm"],a:1,e:"400–1000."},
+{m:3,t:"Direct Drive",c:"E",q:"Slow speed dihubungkan ke propeller…",o:["Langsung","Gearbox besar","Belt","Rantai"],a:0,e:"Direct."},
+{m:3,t:"Reduction Gear",c:"E",q:"Fungsi reduction gear…",o:["Turunkan rpm ke propeller","Naikkan rpm","Tambah BBM","Pendingin"],a:0,e:"Turunkan rpm."},
+{m:3,t:"Shafting",c:"E",q:"Bagian yang teruskan putaran ke propeller…",o:["Camshaft","Shafting","Crankshaft","Cam"],a:1,e:"Shafting."},
+{m:3,t:"Stern Tube",c:"E",q:"Fungsi stern tube…",o:["Tempat poros keluar lambung & pelumasan","Tempat BBM","Filter oli","Pendingin"],a:0,e:"Stern tube."},
+{m:3,t:"Thrust Bearing",c:"E",q:"Fungsi thrust bearing…",o:["Teruskan gaya dorong ke lambung","Filter oli","Pendingin","Atur rpm"],a:0,e:"Gaya aksial."},
+{m:3,t:"FPP",c:"E",q:"Propeller umum kapal besar…",o:["FPP","Voith","Azimuth","Waterjet"],a:0,e:"FPP."},
+{m:3,t:"CPP",c:"E",q:"CPP singkatan…",o:["Controllable Pitch Propeller","Cool Propeller","Constant Pitch","Central Propeller"],a:0,e:"CPP."},
+{m:3,t:"Efficiency ME",c:"E",q:"Faktor efisiensi ME…",o:["Kondisi BBM, filter, injector, turbo","Warna mesin","Berat mesin","Umur kapal"],a:0,e:"Kondisi sistem."},
+{m:3,t:"Overhaul",c:"E",q:"Tujuan overhaul…",o:["Periksa & perbaiki komponen setelah jam ops","Ganti BBM","Pendingin","Filter"],a:0,e:"Periksa besar."},
+{m:3,t:"TBO",c:"E",q:"TBO singkatan…",o:["Time Between Overhauls","Total Barrel Output","Turbo Bypass Opening","Thermal Boiler Output"],a:0,e:"TBO."},
+{m:3,t:"Running In",c:"E",q:"Running in (break-in)…",o:["Setel komponen baru agar duduk","Tambah rpm maks","Pendingin","Tambah BBM"],a:0,e:"Settling."},
+{m:3,t:"Vibration",c:"E",q:"Getaran berlebih disebabkan…",o:["Unbalance, bearing rusak, misalignment","BBM kurang","Filter bersih","Air berlebih"],a:0,e:"Tanda rusak."},
+{m:3,t:"Alignment",c:"E",q:"Alignment poros untuk…",o:["Pastikan poros segaris","Tambah rpm","Pendingin","Filter"],a:0,e:"Segaris."},
+{m:3,t:"EGB",c:"E",q:"EGB memanfaatkan…",o:["Panas gas buang","Panas BBM langsung","Panas matahari","Listrik"],a:0,e:"Waste heat."},
+{m:3,t:"Fuel Valve",c:"E",q:"Injector macet → …",o:["Sulit start / tenaga turun","Mesin dingin","Filter bersih","Oli naik"],a:0,e:"Tenaga turun."},
+{m:3,t:"Blackout",c:"E",q:"Saat blackout lakukan…",o:["Start emergency gen & blackout recovery","Matikan semua","Buang BBM","Tinggalkan"],a:0,e:"Recovery."},
+{m:3,t:"Emergency Stop",c:"E",q:"Emergency stop ME…",o:["Tekan tombol emergency panel","Tarik kabel","Matikan lampu","Buang oli"],a:0,e:"Emergency stop."},
+{m:3,t:"Maneuvering",c:"E",q:"Manuver kapal dengan…",o:["Ubah arah putaran/CPP/gearbox","Ubah suhu","Ubah oli","Ubah lampu"],a:0,e:"Manuver."},
+{m:3,t:"Bridge Control",c:"E",q:"Bridge control artinya…",o:["Kendali dari anjungan","Dari kamar mesin","Manual","Tidak ada"],a:0,e:"Anjungan."},
+{m:3,t:"Dead Slow",c:"E",q:"DEAD SLOW AHEAD…",o:["Maju sangat pelan","Mundur cepat","Stop","Netral"],a:0,e:"Sangat pelan."},
+{m:3,t:"Stand By",c:"E",q:"Kondisi stand by ME…",o:["Mesin siap start","Mesin mati","Mesin dingin","Mesin rusak"],a:0,e:"Siap start."},
+{m:3,t:"Follow Up",c:"E",q:"Follow up system…",o:["Kontrol mengikuti set point","Kontrol otomatis penuh","Mati","Manual"],a:0,e:"Set point."},
+{m:3,t:"Oil Mist",c:"EL",q:"Fungsi oil mist detector…",o:["Deteksi kabut oli di crankcase","Deteksi BBM","Deteksi suhu","Deteksi air"],a:0,e:"Kabut oli."},
+{m:3,t:"Overspeed",c:"EL",q:"Fungsi overspeed trip…",o:["Matikan mesin saat rpm lebih batas","Tambah rpm","Pendingin","Tambah BBM"],a:0,e:"Cegah overspeed."},
+{m:4,t:"Cyl Liner Material",c:"E",q:"Liner tahan terhadap…",o:["Suhu & gesekan tinggi","Air laut","Getaran listrik","Karat udara"],a:0,e:"Suhu & gesekan."},
+{m:4,t:"Water Jacket",c:"E",q:"Fungsi water jacket…",o:["Ruang pendingin di sekitar silinder","Filter oli","Simpan BBM","Simpan udara"],a:0,e:"Pendingin."},
+{m:4,t:"Crankcase",c:"E",q:"Fungsi crankcase…",o:["Rumah crankshaft & tampung oli","Filter udara","Simpan BBM","Pendingin"],a:0,e:"Rumah crank."},
+{m:4,t:"Air Start Valve",c:"E",q:"Fungsi air starting valve…",o:["Alirkan udara start ke silinder","Alirkan BBM","Alirkan oli","Alirkan air"],a:0,e:"Air start."}
+];
+const BANK_MPU = expandTo100(BANK_MPU_BASE);
+
+const BANK_OPERASIONAL_BASE = [
+{m:1,t:"Aux Kapal",c:"E",q:"Mesin bantu paling penting di kamar mesin…",o:["Pompa & kompresor","Kursi","TV","Lampu"],a:0,e:"Pompa."},
+{m:1,t:"Klasifikasi Pompa",c:"E",q:"Klasifikasi utama pompa…",o:["Centrifugal & PD","Listrik & manual","Darat & laut","Hidrolik & pneumatik"],a:0,e:"Sentrifugal & PD."},
+{m:1,t:"Pompa Centrifugal",c:"E",q:"Prinsip pompa sentrifugal…",o:["Ubah energi kinetik impeler jadi tekanan","Piston","Magnet","Pegas"],a:0,e:"Kinetik → tekanan."},
+{m:1,t:"Pompa PD",c:"E",q:"Contoh pompa PD…",o:["Piston/gear/screw/vane","Sentrifugal","Ejektor","Venturi"],a:0,e:"PD."},
+{m:1,t:"Priming",c:"E",q:"Priming pompa sentrifugal…",o:["Isi cairan sebelum start cegah kavitasi","Dinginkan","Filter oli","Tambah rpm"],a:0,e:"Cegah kavitasi."},
+{m:1,t:"Kavitasi",c:"E",q:"Kavitasi karena…",o:["Tekanan hisap rendah → cairan menguap & gerus impeler","Buang tinggi","Kecepatan rendah","Suhu rendah"],a:0,e:"Hisap rendah."},
+{m:1,t:"Ejector",c:"E",q:"Ejector untuk…",o:["Vakum & pindah cairan dengan venturi","Dinginkan","Tambah rpm","Filter"],a:0,e:"Venturi."},
+{m:1,t:"Bilge",c:"E",q:"Fungsi bilge pump…",o:["Buang air kotor dari bilga","Pindah BBM","Tambah air","Dinginkan"],a:0,e:"Air got."},
+{m:1,t:"Ballast",c:"E",q:"Fungsi ballast pump…",o:["Pindah air ballast untuk stabilitas","Pindah BBM","Dinginkan","Tambah air"],a:0,e:"Stabilitas."},
+{m:1,t:"GS Pump",c:"E",q:"Fungsi GS pump…",o:["Serba guna air laut","Filter BBM","Tambah rpm","Dinginkan"],a:0,e:"Serba guna."},
+{m:1,t:"Fire Pump",c:"E",q:"Syarat fire pump…",o:["Selalu siap & tekanan cukup","Cukup 1","Bisa apapun","Tanpa tes"],a:0,e:"Standby."},
+{m:1,t:"Emg Fire Pump",c:"E",q:"Emergency fire pump start dalam…",o:["<45 detik mandiri","5 menit","30 menit","1 jam"],a:0,e:"Mandatory."},
+{m:1,t:"FO Transfer",c:"E",q:"Fungsi FO transfer pump…",o:["Pindah BBM antar tangki","Filter oli","Dinginkan","Pindah air"],a:0,e:"Pindah BBM."},
+{m:1,t:"FO Supply",c:"E",q:"Fungsi FO supply pump…",o:["Suplai BBM ke mesin","Dinginkan","Filter oli","Ballast"],a:0,e:"BBM ke mesin."},
+{m:1,t:"LO Pump",c:"E",q:"Fungsi LO pump…",o:["Sirkulasi oli pelumas","Pindah BBM","Dinginkan","Filter udara"],a:0,e:"Sirkulasi oli."},
+{m:2,t:"Main Engine",c:"E",q:"Fungsi ME…",o:["Penggerak utama melalui propeller","Pembangkit listrik","Pompa air","Kompresor"],a:0,e:"Penggerak."},
+{m:2,t:"AE",c:"E",q:"Fungsi auxiliary engine…",o:["Gerakkan generator listrik","Gerakkan propeller","Pompa utama","Dinginkan ME"],a:0,e:"Generator."},
+{m:2,t:"Genset",c:"E",q:"Genset terdiri atas…",o:["Diesel + alternator","Diesel + pompa","Motor + pompa","Motor + kompresor"],a:0,e:"Diesel + alternator."},
+{m:2,t:"Paralel",c:"E",q:"Syarat paralel genset…",o:["V, f, fasa, urutan sama","V saja","f saja","Daya sama"],a:0,e:"Lengkap."},
+{m:2,t:"Emergency Gen",c:"E",q:"Fungsi emergency gen…",o:["Beban darurat saat listrik utama mati","Gerakkan propeller","Dinginkan","Pindah BBM"],a:0,e:"Beban darurat."},
+{m:2,t:"Load Sharing",c:"E",q:"Load sharing…",o:["Bagi beban seimbang","Matikan genset","Tambah rpm","Dinginkan"],a:0,e:"Bagi beban."},
+{m:2,t:"Blackout Rec",c:"E",q:"Langkah pertama blackout…",o:["Start emergency gen & hubung beban darurat","Matikan semua","Buang BBM","Tinggalkan"],a:0,e:"Emergency."},
+{m:2,t:"Main Boiler",c:"E",q:"Fungsi main boiler…",o:["Hasilkan uap untuk mesin bantu","Dinginkan","Filter BBM","Gerakkan propeller"],a:0,e:"Uap utama."},
+{m:2,t:"Aux Boiler",c:"E",q:"Fungsi auxiliary boiler…",o:["Uap pemanas & kebutuhan bantu","Propeller","Dinginkan ME","Filter"],a:0,e:"Uap bantu."},
+{m:2,t:"EGB",c:"E",q:"EGB memanfaatkan…",o:["Panas gas buang ME","Panas BBM","Panas listrik","Panas matahari"],a:0,e:"Waste heat."},
+{m:2,t:"Feed Water",c:"E",q:"Fungsi feed water system…",o:["Suplai air umpan boiler","Dinginkan boiler","Filter BBM","Tambah uap"],a:0,e:"Air umpan."},
+{m:2,t:"Burner",c:"E",q:"Fungsi burner…",o:["Campur BBM & udara untuk dibakar","Filter air","Dinginkan uap","Isi BBM"],a:0,e:"Pembakaran."},
+{m:2,t:"Safety V Boiler",c:"E",q:"Fungsi safety valve boiler…",o:["Lepas uap berlebih saat P lebih","Tambah uap","Tambah air","Dinginkan"],a:0,e:"Pelindung P."},
+{m:2,t:"Water Level",c:"E",q:"Water level dijaga karena…",o:["Level rendah rusak tube & overheat","Level tinggi kurangi uap","Level rendah tambah uap","Tidak penting"],a:0,e:"Keselamatan."},
+{m:2,t:"Blow Down",c:"E",q:"Blow down boiler…",o:["Buang kotoran & endapan","Dinginkan","Tambah uap","Filter BBM"],a:0,e:"Buang endapan."},
+{m:2,t:"Scaling",c:"E",q:"Kerak boiler → …",o:["Overheat tube & efisiensi turun","Efisiensi naik","Uap tambah","Air kurang"],a:0,e:"Hambat panas."},
+{m:3,t:"Purifier Disc",c:"E",q:"Jumlah disc mempengaruhi…",o:["Efisiensi pemisahan","V","f","Suhu"],a:0,e:"Pemisahan."},
+{m:3,t:"Sludge Discharge",c:"E",q:"Sludge discharge…",o:["Buang endapan di bowl","Tambah BBM","Dinginkan","Filter udara"],a:0,e:"Buang kotoran."},
+{m:3,t:"Purifier Bowl",c:"E",q:"Bowl purifier…",o:["Tempat pemisahan sentrifugal","Motor","Pipa","Filter"],a:0,e:"Pemisahan."},
+{m:3,t:"Pemanasan FO",c:"E",q:"Sebelum purifier, BBM dipanaskan untuk…",o:["Turunkan viskositas","Tambah rpm","Dinginkan","Filter"],a:0,e:"Viskositas."},
+{m:3,t:"Purifier Speed",c:"E",q:"Kecepatan purifier…",o:["2000–4000 rpm","100–200 rpm","6000–10000 rpm","<100 rpm"],a:0,e:"Tinggi."},
+{m:3,t:"OWS",c:"E",q:"Fungsi OWS…",o:["Pisah minyak dari air got <15 ppm","Pisah BBM","Filter udara","Dinginkan"],a:0,e:"Limit 15 ppm."},
+{m:3,t:"OWS Limit",c:"E",q:"Batas minyak buangan OWS (MARPOL)…",o:["15 ppm","100 ppm","1000 ppm","Tanpa batas"],a:0,e:"MARPOL I."},
+{m:3,t:"Sewage",c:"E",q:"Fungsi sewage treatment…",o:["Olah limbah kotoran agar aman","Filter BBM","Dinginkan","Tambah air"],a:0,e:"Limbah."},
+{m:3,t:"Incinerator",c:"E",q:"Fungsi incinerator…",o:["Bakar sampah & limbah minyak","Filter air","Dinginkan","Tambah BBM"],a:0,e:"Bakar limbah."},
+{m:3,t:"IGS",c:"E",q:"Fungsi IGS tanker…",o:["Isi tangki gas inert cegah terbakar","Tambah oksigen","Dinginkan","Pindah minyak"],a:0,e:"Cegah ledakan."},
+{m:3,t:"IGG",c:"E",q:"Sumber gas inert IGG…",o:["Gas buang boiler/mesin dibersihkan","Udara tekan","Uap air","Oksigen murni"],a:0,e:"Gas buang."},
+{m:3,t:"Cargo Pump",c:"E",q:"Jenis pompa cargo oil…",o:["Sentrifugal/screw/reciprocating","Venturi","Ejektor","Manual"],a:0,e:"Kapasitas besar."},
+{m:3,t:"Stripping",c:"E",q:"Fungsi stripping pump…",o:["Hisap sisa minyak setelah cargo pump","Isi tangki","Filter minyak","Dinginkan"],a:0,e:"Sisa."},
+{m:3,t:"Cargo Valve",c:"E",q:"Jenis valve umum cargo…",o:["Butterfly & gate valve","Safety valve","Reducing valve","NRV"],a:0,e:"Butterfly/gate."},
+{m:3,t:"Tank Cleaning",c:"E",q:"Tujuan tank cleaning…",o:["Bersihkan tangki sebelum muat ulang/dry dock","Tambah muatan","Dinginkan","Filter minyak"],a:0,e:"Sebelum muat."},
+{m:3,t:"COW",c:"E",q:"COW menggunakan…",o:["Minyak mentah untuk cuci tangki","Air laut","Udara","Uap"],a:0,e:"Crude oil."},
+{m:3,t:"Butterworth",c:"E",q:"Pencucian tanker bertekanan tinggi…",o:["Butterworth","IGS","COW","Stripping"],a:0,e:"Butterworth."},
+{m:3,t:"Gas Freeing",c:"E",q:"Gas freeing tangki untuk…",o:["Buang gas berbahaya agar aman masuk orang","Tambah gas","Dinginkan","Filter"],a:0,e:"Buang gas."},
+{m:3,t:"Steering Gear",c:"E",q:"Fungsi steering gear…",o:["Gerakkan daun kemudi dari anjungan","Gerakkan propeller","Filter BBM","Dinginkan"],a:0,e:"Kemudi."},
+{m:3,t:"Jenis SG",c:"E",q:"Jenis steering gear umum…",o:["Hydraulic ram/rotary vane","Manual","Uap","Listrik saja"],a:0,e:"Hydraulic."},
+{m:3,t:"Emg Steering",c:"E",q:"Waktu ganti steering ke emergency…",o:["<45 detik","5 menit","10 menit","30 menit"],a:0,e:"Cepat."},
+{m:3,t:"Windlass",c:"E",q:"Fungsi windlass…",o:["Turun/angkat jangkar","Gerakkan propeller","Filter BBM","Dinginkan"],a:0,e:"Jangkar."},
+{m:3,t:"Mooring",c:"E",q:"Fungsi mooring winch…",o:["Kencangkan/endurkan tali tambat","Turunkan jangkar","Angkat cargo","Filter"],a:0,e:"Tali tambat."},
+{m:3,t:"Bow Thruster",c:"E",q:"Fungsi bow thruster…",o:["Manuver dorong haluan","Dorong buritan","Angkat jangkar","Filter"],a:0,e:"Haluan."},
+{m:4,t:"Compressor",c:"E",q:"Kompresor udara suplai untuk…",o:["Start mesin, kontrol, pneumatic","Dinginkan","Tambah BBM","Filter oli"],a:0,e:"Banyak."},
+{m:4,t:"Air Receiver",c:"E",q:"Fungsi air receiver…",o:["Simpan udara tekan","Filter oli","Dinginkan","Tambah BBM"],a:0,e:"Udara."},
+{m:4,t:"Air Dryer",c:"E",q:"Fungsi air dryer…",o:["Kurangi kelembapan udara tekan","Dinginkan","Perbesar tekanan","Filter udara"],a:0,e:"Buang uap air."},
+{m:4,t:"Reducing V",c:"E",q:"Fungsi reducing valve…",o:["Turunkan tekanan sesuai kebutuhan","Naikkan tekanan","Filter udara","Dinginkan"],a:0,e:"Turunkan."},
+{m:4,t:"Safety V Udara",c:"E",q:"Fungsi safety valve udara…",o:["Lepas udara saat P lebih","Tambah P","Filter udara","Dinginkan"],a:0,e:"Pelindung P."},
+{m:4,t:"HVAC",c:"E",q:"HVAC singkatan…",o:["Heating, Ventilation, and Air Conditioning","High Voltage AC","Heat Valve Air Control","Hydraulic Valve AC"],a:0,e:"HVAC."},
+{m:4,t:"Refrigerasi",c:"E",q:"Refrigerasi kapal berdasar…",o:["Siklus kompresi uap","Siklus diesel","Siklus Brayton","Siklus Rankine"],a:0,e:"Kompresi uap."},
+{m:4,t:"FWG",c:"E",q:"FWG hasilkan air tawar dari…",o:["Air laut distilasi","Air hujan","Air sungai","Air es"],a:0,e:"Distilasi."},
+{m:4,t:"FWG Vacuum",c:"E",q:"FWG vakum untuk…",o:["Turunkan titik didih air laut","Naikkan titik didih","Tambah P","Filter air"],a:0,e:"Vacuum."},
+{m:4,t:"BWT",c:"E",q:"Ballast water treatment bertujuan…",o:["Bunuh mikroorganisme di ballast","Filter BBM","Dinginkan","Tambah air"],a:0,e:"BWT."},
+{m:4,t:"Ballast Exchange",c:"E",q:"Ballast exchange di…",o:["Laut lepas >200 mil dari darat","Pelabuhan","Dermaga","Sungai"],a:0,e:"Laut lepas."},
+{m:4,t:"Bilge Sys",c:"E",q:"Sistem bilga untuk…",o:["Kumpul & buang air got","Pindah BBM","Dinginkan","Tambah air"],a:0,e:"Air got."},
+{m:4,t:"Bilge Sep",c:"E",q:"Bilge separator untuk…",o:["Pisah minyak dari air bilga","Pindah BBM","Dinginkan","Tambah air"],a:0,e:"Oil water sep."},
+{m:4,t:"MARPOL I",c:"E",q:"MARPOL Annex I tentang…",o:["Pencemaran minyak","Udara","Sampah","Sewage"],a:0,e:"Minyak."},
+{m:4,t:"MARPOL VI",c:"E",q:"MARPOL Annex VI tentang…",o:["Pencemaran udara kapal","Minyak","Sampah","Sewage"],a:0,e:"Udara."},
+{m:4,t:"ME Overheat",c:"E",q:"Overheat ME diatasi dengan…",o:["Turunkan beban & cek pendingin","Tambah beban","Matikan lampu","Buang oli"],a:0,e:"Turunkan beban."},
+{m:4,t:"LO Filter",c:"E",q:"Filter oli mesin rusak bisa…",o:["Tekanan oli turun & aus mesin","Tambah tekanan","Tambah rpm","Dinginkan"],a:0,e:"Turun P."},
+{m:4,t:"Fuel Filter",c:"E",q:"Filter BBM kotor bisa…",o:["Mesin kehilangan tenaga","Tambah rpm","Dinginkan","Kurangi BBM"],a:0,e:"Kehilangan tenaga."},
+{m:4,t:"Air Filter",c:"E",q:"Filter udara kotor bisa…",o:["Kurangi udara masuk & tenaga","Tambah tenaga","Dinginkan","Kurangi rpm"],a:0,e:"Kurangi udara."},
+{m:4,t:"Crankcase Vent",c:"E",q:"Fungsi crankcase ventilation…",o:["Buang gas & uap oli dari crankcase","Tambah tekanan","Dinginkan","Filter oli"],a:0,e:"Buang gas."},
+{m:4,t:"Scavenge Space",c:"E",q:"Scavenge space harus diperiksa untuk…",o:["Kebersihan & cegah kebakaran","Warna","Berat","Suhu"],a:0,e:"Cegah fire."},
+{m:4,t:"Fire Ext",c:"E",q:"Jenis pemadam untuk kebakaran kelas C…",o:["CO₂","Air","Busa","Pasir basah"],a:0,e:"CO₂."},
+{m:4,t:"LSA",c:"E",q:"LSA kapal singkatan…",o:["Life Saving Appliances","Low Safety Area","Long Ship Apparatus","Light System Alarm"],a:0,e:"Alat keselamatan."},
+{m:4,t:"FFA",c:"E",q:"FFA kapal singkatan…",o:["Fire Fighting Appliances","Fast Fuel Adjustment","Full Flow Alarm","Fire Fuel Area"],a:0,e:"Alat pemadam."}
+];
+const BANK_OPERASIONAL = expandTo100(BANK_OPERASIONAL_BASE);
+
+const BANK_ECA_BASE = [
+{m:1,t:"Komponen Kontrol",c:"EL",q:"Sistem kontrol otomatis tersusun atas…",o:["Sensor–Controller–Actuator","Motor–Pompa–Tangki","Boiler–Mesin–Generator","Saklar–Lampu–Kabel"],a:0,e:"SCA."},
+{m:1,t:"Open Loop",c:"EL",q:"Open loop…",o:["Tanpa feedback","Ada feedback","Otomatis","Manual"],a:0,e:"Tanpa FB."},
+{m:1,t:"Closed Loop",c:"EL",q:"Closed loop…",o:["Dengan feedback","Tanpa FB","Manual","Mati"],a:0,e:"Ada FB."},
+{m:1,t:"Set Point",c:"EL",q:"Set point adalah…",o:["Nilai target","Error","Output","Gangguan"],a:0,e:"Target."},
+{m:1,t:"Error",c:"EL",q:"Error = …",o:["SP − PV","PV − SP","SP + PV","SP × PV"],a:0,e:"SP − PV."},
+{m:1,t:"Feedback",c:"EL",q:"Fungsi feedback…",o:["Info nilai aktual ke controller","Tambah V","Dinginkan","Tambah beban"],a:0,e:"Umpan balik."},
+{m:1,t:"Sensor",c:"EL",q:"Fungsi sensor…",o:["Deteksi proses → sinyal listrik","Gerakkan aktuator","Kendalikan valve","Simpan data"],a:0,e:"Deteksi."},
+{m:1,t:"Transmitter",c:"EL",q:"Fungsi transmitter…",o:["Ubah sinyal sensor jadi standar (4–20 mA)","Tambah V","Dinginkan","Simpan"],a:0,e:"Standar."},
+{m:1,t:"Controller",c:"EL",q:"Fungsi controller…",o:["Banding SP & PV → perintah aktuator","Deteksi","Gerakkan","Simpan"],a:0,e:"Kendali."},
+{m:1,t:"Actuator",c:"EL",q:"Fungsi actuator…",o:["Gerakkan elemen kontrol akhir","Deteksi","Kendalikan","Simpan"],a:0,e:"Penggerak."},
+{m:1,t:"FCE",c:"EL",q:"Contoh final control element…",o:["Control valve, damper, motor","Sensor","Transmitter","Controller"],a:0,e:"FCE."},
+{m:1,t:"Analog/Digital",c:"EL",q:"Bedanya sinyal analog & digital…",o:["Analog kontinu, digital diskrit","Analog diskrit, digital kontinu","Keduanya kontinu","Keduanya digital"],a:0,e:"Analog kontinu."},
+{m:2,t:"ON-OFF",c:"EL",q:"Karakteristik ON-OFF…",o:["Output 2 kondisi (penuh/mati)","Proporsional","Sinusoidal","DC"],a:0,e:"2 posisi."},
+{m:2,t:"P",c:"EL",q:"Kontrol proporsional…",o:["Output ∝ error","ON-OFF","Integral","Derivative"],a:0,e:"P."},
+{m:2,t:"I",c:"EL",q:"Kontrol integral…",o:["Hilangkan offset P","Tambah offset","Tambah getaran","Matikan"],a:0,e:"Hilangkan offset."},
+{m:2,t:"D",c:"EL",q:"Kontrol derivatif…",o:["Percepat respon & cegah overshoot","Perlambat","Tambah offset","Matikan"],a:0,e:"Cegah overshoot."},
+{m:2,t:"PID",c:"EL",q:"PID = …",o:["Proportional Integral Derivative","Primary Input Digital","Push Input Data","Power In Device"],a:0,e:"P I D."},
+{m:2,t:"Tuning",c:"EL",q:"Tuning PID untuk…",o:["Sesuaikan parameter respon optimal","Perlambat","Tambah error","Tambah noise"],a:0,e:"Optimasi."},
+{m:2,t:"Overshoot",c:"EL",q:"Overshoot…",o:["Nilai proses melebihi SP sebelum stabil","Di bawah SP","Stabil","Nol"],a:0,e:"Melebihi SP."},
+{m:2,t:"Offset",c:"EL",q:"Offset pada P karena…",o:["P tidak hasilkan output saat error nol","Sensor rusak","Aktuator rusak","Controller mati"],a:0,e:"Karakteristik P."},
+{m:2,t:"Dead Band",c:"EL",q:"Dead band = …",o:["Rentang error di mana output tidak berubah","Output maks","Output min","Output konstan"],a:0,e:"Cegah hunting."},
+{m:2,t:"Hunting",c:"EL",q:"Hunting…",o:["Output berubah terus di sekitar SP","Konstan","Nol","Maks"],a:0,e:"Osilasi."},
+{m:2,t:"Loop Diagram",c:"EL",q:"Loop diagram menunjukkan…",o:["Alur sensor → controller → actuator","Alur listrik","Alur mekanik","Alur pipa"],a:0,e:"Alur kontrol."},
+{m:2,t:"Cascade",c:"EL",q:"Cascade control = …",o:["Satu controller output jadi SP controller lain","Dua paralel","Satu-satu","Manual"],a:0,e:"Cascade."},
+{m:2,t:"Ratio",c:"EL",q:"Ratio control = …",o:["Jaga perbandingan 2 aliran","Bagi SP","Dua paralel","Manual"],a:0,e:"Rasio."},
+{m:2,t:"Feedforward",c:"EL",q:"Feedforward control…",o:["Koreksi sebelum gangguan muncul","Setelah gangguan","Paralel","Manual"],a:0,e:"Sebelum."},
+{m:2,t:"Split Range",c:"EL",q:"Split range = …",o:["1 output ke 2 valve beda range","2 output 1 valve","1-1","Manual"],a:0,e:"Split."},
+{m:3,t:"Hidrolik",c:"EL",q:"Hidrolik media kerja…",o:["Cairan (oli)","Udara","Listrik","Uap"],a:0,e:"Cairan."},
+{m:3,t:"Pneumatik",c:"EL",q:"Pneumatik media kerja…",o:["Udara bertekanan","Air","Oli","Uap"],a:0,e:"Udara."},
+{m:3,t:"Keunggulan Hid",c:"EL",q:"Keunggulan hidrolik…",o:["Gaya besar & presisi tinggi","Murah","Bersih","Sederhana"],a:0,e:"Gaya besar."},
+{m:3,t:"Keunggulan Pneu",c:"EL",q:"Keunggulan pneumatik…",o:["Bersih, murah, aman","Lebih kuat","Presisi","Senyap"],a:0,e:"Bersih."},
+{m:3,t:"Pompa Hid",c:"EL",q:"Fungsi pompa hidrolik…",o:["Alirkan oli bertekanan","Dinginkan oli","Filter oli","Tambah oli"],a:0,e:"Sumber P."},
+{m:3,t:"Reservoir",c:"EL",q:"Fungsi reservoir…",o:["Simpan oli & pisah kotoran","Tambah P","Dinginkan","Tambah rpm"],a:0,e:"Tangki."},
+{m:3,t:"Directional",c:"EL",q:"Fungsi directional valve…",o:["Arah aliran oli","P","Suhu","Viskositas"],a:0,e:"Arah."},
+{m:3,t:"PRV",c:"EL",q:"Fungsi PRV…",o:["Lepas P lebih agar aman","Tambah P","Arah","Aliran"],a:0,e:"Pelindung."},
+{m:3,t:"FCV",c:"EL",q:"FCV mengatur…",o:["Kecepatan aktuator via debit oli","P","Suhu","Arah"],a:0,e:"Kecepatan."},
+{m:3,t:"Silinder Hid",c:"EL",q:"Silinder hidrolik = …",o:["Ubah P oli → gerak linier","P → putar","Dinginkan","Filter"],a:0,e:"Linier."},
+{m:3,t:"Motor Hid",c:"EL",q:"Motor hidrolik = …",o:["P oli → gerak putar","Linier","Dinginkan","Filter"],a:0,e:"Putar."},
+{m:3,t:"Akumulator",c:"EL",q:"Akumulator…",o:["Simpan energi hidrolik & redam lonjakan","Dinginkan oli","Filter oli","Tambah rpm"],a:0,e:"Simpan energi."},
+{m:3,t:"Filter Hid",c:"EL",q:"Filter pada hidrolik…",o:["Saring kotoran oli","Tambah P","Dinginkan","Tambah rpm"],a:0,e:"Saringan."},
+{m:3,t:"Kompresor Pneu",c:"EL",q:"Kompresor pneumatik…",o:["Hasilkan udara bertekanan","Hasilkan oli","Hasilkan air","Hasilkan panas"],a:0,e:"Udara."},
+{m:3,t:"FRL",c:"EL",q:"FRL…",o:["Filter, Regulator, Lubricator","Fast Run Loop","Filter Return Line","Full Range Load"],a:0,e:"FRL."},
+{m:3,t:"Solenoid V",c:"EL",q:"Solenoid valve pneumatik…",o:["Atur aliran udara elektrik","Oli","Dinginkan","Tambah P"],a:0,e:"Elektrik."},
+{m:3,t:"Silinder Pneu",c:"EL",q:"Silinder pneumatik…",o:["P udara → gerak linier","P → putar","Dinginkan","Filter"],a:0,e:"Linier."},
+{m:3,t:"Kecepatan Sil",c:"EL",q:"Kecepatan silinder pneumatik diatur oleh…",o:["Flow control valve","PRV","Filter","Kompresor"],a:0,e:"FCV."},
+{m:3,t:"Gaya Silinder",c:"EL",q:"Gaya silinder bergantung pada…",o:["Tekanan × luas penampang","Warna","Suhu","Berat"],a:0,e:"P × A."},
+{m:3,t:"Akumulator N2",c:"EL",q:"Akumulator umum pakai gas…",o:["Nitrogen","Oksigen","Hidrogen","Helium"],a:0,e:"N₂."},
+{m:3,t:"Pipa Hid",c:"EL",q:"Pipa hidrolik dirancang untuk…",o:["Tekanan tinggi","Suhu rendah","V rendah","Korosi"],a:0,e:"P tinggi."},
+{m:3,t:"Seal",c:"EL",q:"Fungsi seal pada aktuator…",o:["Cegah kebocoran","Tambah P","Filter","Dinginkan"],a:0,e:"Anti bocor."},
+{m:4,t:"Limit Switch",c:"EL",q:"Limit switch deteksi…",o:["Posisi ujung langkah aktuator","Suhu","P","Getaran"],a:0,e:"Ujung langkah."},
+{m:4,t:"Proximity",c:"EL",q:"Proximity switch…",o:["Deteksi objek tanpa kontak","Ukur suhu","P","Aliran"],a:0,e:"Non-contact."},
+{m:4,t:"Solenoid",c:"EL",q:"Prinsip solenoid…",o:["Kumparan → medan magnet → plunger","Beda suhu","Beda P","Beda cahaya"],a:0,e:"Magnet."},
+{m:4,t:"Relay",c:"EL",q:"Fungsi relay…",o:["Kontrol beban besar sinyal kecil","Ukur suhu","P","Getaran"],a:0,e:"Kontrol."},
+{m:4,t:"Kontaktor/Relay",c:"EL",q:"Kontaktor vs relay…",o:["Kontaktor beban besar, relay kecil","Sama","Kontaktor kecil","Relay besar"],a:0,e:"Beban."},
+{m:4,t:"Timer Relay",c:"EL",q:"Timer relay…",o:["Delay operasi","Ukur waktu","Simpan","Atur rpm"],a:0,e:"Delay."},
+{m:4,t:"Counter",c:"EL",q:"Counter…",o:["Hitung kejadian/pulsa","Ukur waktu","Suhu","P"],a:0,e:"Hitung."},
+{m:4,t:"PLC Input",c:"EL",q:"Input PLC umumnya…",o:["Sensor, tombol, limit switch","Motor, valve, lampu","Boiler","Pompa"],a:0,e:"Sensor."},
+{m:4,t:"PLC Output",c:"EL",q:"Output PLC umumnya…",o:["Motor, valve, lampu, kontaktor","Sensor","Transmitter","Tombol"],a:0,e:"Aktuator."},
+{m:4,t:"Ladder",c:"EL",q:"Ladder diagram = …",o:["Bahasa PLC simbol kontak & koil","Grafik suhu","Diagram pipa","DC"],a:0,e:"Ladder."},
+{m:4,t:"Interlock",c:"EL",q:"Safety interlock…",o:["Cegah operasi berbahaya otomatis","Tambah tenaga","Tambah kecepatan","Tambah beban"],a:0,e:"Keselamatan."},
+{m:4,t:"ESD",c:"EL",q:"ESD = …",o:["Emergency Shutdown","Extra Safe Device","Electrical Safety Door","Emergency Start Device"],a:0,e:"ESD."},
+{m:4,t:"Fail Safe",c:"EL",q:"Fail safe…",o:["Saat gagal → kondisi aman","Meledak","Terus jalan","Mati total"],a:0,e:"Aman saat gagal."},
+{m:4,t:"HMI",c:"EL",q:"HMI = …",o:["Human Machine Interface","High Motor Input","Hydraulic Motor Interface","Heat Meter Indicator"],a:0,e:"HMI."},
+{m:4,t:"SCADA",c:"EL",q:"SCADA = …",o:["Supervisory Control and Data Acquisition","Sensor Control and Data","System Control Analog","Supervisory Control Analog Device"],a:0,e:"SCADA."},
+{m:4,t:"DCS",c:"EL",q:"DCS = …",o:["Distributed Control System","Digital Control Sensor","Data Control Station","Direct Control System"],a:0,e:"DCS."},
+{m:4,t:"Trending",c:"EL",q:"Trending = …",o:["Catat perubahan nilai proses terhadap waktu","Tambah kecepatan","Dinginkan","Filter"],a:0,e:"Trend."},
+{m:4,t:"Data Logger",c:"EL",q:"Data logger = …",o:["Catat data proses otomatis","Tambah data","Kurangi data","Hapus"],a:0,e:"Logger."},
+{m:4,t:"Remote",c:"EL",q:"Remote control = …",o:["Kontrol dari jarak jauh","Lokal","Manual","Auto penuh"],a:0,e:"Jauh."},
+{m:4,t:"Local",c:"EL",q:"Local control = …",o:["Kontrol dari dekat peralatan","Jauh","Auto","Pusat"],a:0,e:"Dekat."},
+{m:5,t:"Analog Ctrl",c:"EL",q:"Kelebihan analog controller…",o:["Cepat & sederhana","Fleksibel","Programming","Murah"],a:0,e:"Cepat."},
+{m:5,t:"Digital Ctrl",c:"EL",q:"Kelebihan digital controller…",o:["Fleksibel, akurat, bisa programming","Sederhana","Cepat","Hemat"],a:0,e:"Fleksibel."},
+{m:5,t:"Alarm Sys",c:"EL",q:"Alarm system…",o:["Peringatan saat kondisi abnormal","Tambah beban","Tambah rpm","Dinginkan"],a:0,e:"Peringatan."},
+{m:5,t:"Acknowledge",c:"EL",q:"Acknowledge = …",o:["Akui alarm, matikan suara, indikator tetap","Matikan sistem","Tambah alarm","Reset semua"],a:0,e:"Akui."},
+{m:5,t:"Kalibrasi",c:"EL",q:"Kalibrasi = …",o:["Pastikan akurasi alat","Tambah daya","Dinginkan","Tambah rpm"],a:0,e:"Akurasi."},
+{m:5,t:"Loop Check",c:"EL",q:"Loop check = …",o:["Pastikan seluruh kontrol dari sensor ke actuator","Tambah loop","Hapus loop","Matikan"],a:0,e:"Verifikasi."},
+{m:5,t:"Troubleshoot",c:"EL",q:"Langkah pertama troubleshooting…",o:["Identifikasi gejala & cek input ke output","Ganti komponen","Bongkar semua","Matikan"],a:0,e:"Gejala."},
+{m:5,t:"Pneumatic Act",c:"EL",q:"Kecepatan aktuator pneumatik diatur…",o:["Flow control valve","PRV","Filter","Kompresor"],a:0,e:"FCV."},
+{m:5,t:"Fail Direction",c:"EL",q:"Fail direction valve = …",o:["Arah aman saat gagal","Arah normal","Arah bebas","Arah lain"],a:0,e:"Aman."},
+{m:5,t:"Positioner",c:"EL",q:"Valve positioner untuk…",o:["Pastikan posisi valve sesuai sinyal","Tambah P","Filter","Dinginkan"],a:0,e:"Posisi."},
+{m:5,t:"I/P Converter",c:"EL",q:"Fungsi I/P converter…",o:["Ubah sinyal listrik ke tekanan pneumatik","Pneumatik ke listrik","AC ke DC","DC ke AC"],a:0,e:"I ke P."},
+{m:5,t:"Controller Output",c:"EL",q:"Output controller umumnya…",o:["4–20 mA","0–1 V","1–5 A","0–100 mA"],a:0,e:"4–20 mA."},
+{m:5,t:"HMI Touch",c:"EL",q:"HMI touchscreen untuk…",o:["Operator monitor & kontrol","Tambah rpm","Dinginkan","Filter"],a:0,e:"HMI."}
+];
+const BANK_ECA = expandTo100(BANK_ECA_BASE);
+
+/* ============ SUBJECTS ============ */
+const SUBJECTS = {
+  kelistrikan: {id:"kelistrikan", icon:"⚡", name:"Kelistrikan Kapal", desc:"Teknika 1A/1B & TRPK UHT Semester 3", kkm:70, durasi:180, jumlah:100,
+    topicNames:{1:"Dasar Kelistrikan",2:"Sumber Daya & Distribusi",3:"Mesin Listrik",4:"Instalasi & Kabel",5:"Panel & Proteksi",6:"Otomasi & Sensor",7:"Baterai & Emergency",8:"GA & Permesinan"},
+    bank:BANK_KELISTRIKAN},
+  mpu: {id:"mpu", icon:"⚙", name:"MPU — Main Propulsion Engine", desc:"Teknika 1A & 1B", kkm:70, durasi:180, jumlah:100,
+    topicNames:{1:"Dasar Mesin Diesel",2:"Sistem & Operasi",3:"Sistem Propulsi",4:"Auxiliary Mesin"},
+    bank:BANK_MPU},
+  operasional: {id:"operasional", icon:"🚢", name:"Operasional Permesinan Kapal", desc:"ETO Semester 3 (ME, Genset, Boiler, Purifier, Cargo & Deck)", kkm:70, durasi:180, jumlah:100,
+    topicNames:{1:"Sistem Pompa & Pipa",2:"Main Engine & Auxiliary",3:"Boiler & Purifier",4:"Cargo & Deck Machinery"},
+    bank:BANK_OPERASIONAL},
+  eca: {id:"eca", icon:"🔧", name:"Electronical Control Actuating (ECA)", desc:"Teknika UHT (TRPK) Semester 3 — Hydraulic & Pneumatic", kkm:70, durasi:180, jumlah:100,
+    topicNames:{1:"Dasar Sistem Kontrol",2:"Kontrol PID & Loop",3:"Hidrolik & Pneumatik",4:"Sensor & Aktuator",5:"Kontrol Modern & Troubleshoot"},
+    bank:BANK_ECA}
+};
+
+/* ============ STATE ============ */
+var activeSubject = null;
+var QUESTIONS = [];
+var state = {idx:0,answers:[],locked:[],startTime:0,timer:null,sessionTimer:null,finished:false};
+var session = {start:null,attempts:[],expired:false};
+var taruna = {nama:"",nit:"",jurusan:"",semester:""};
+
+function $(id){return document.getElementById(id);}
+function fmt(s){s=Math.max(0,Math.floor(s));var m=Math.floor(s/60),ss=s%60;return String(m).padStart(2,"0")+":"+String(ss).padStart(2,"0");}
+function elapsed(){return Math.floor((Date.now()-state.startTime)/1000);}
+function shuffle(arr){var a=arr.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+/* ============================================================
+   ✅ BALANCED SHUFFLE — kunci A/B/C/D sama banyak (25:25:25:25)
+   ============================================================ */
+function buildShuffledQuestions(bank, n){
+  var picked = shuffle(bank).slice(0, Math.min(n, bank.length));
+  var total = picked.length;
+  /* Bangun daftar posisi A/B/C/D yang seimbang */
+  var positions = [];
+  var perPos = Math.floor(total / 4);
+  var sisa = total - perPos * 4;
+  for(var p=0;p<4;p++){
+    for(var k=0;k<perPos;k++) positions.push(p);
+  }
+  for(var s=0;s<sisa;s++) positions.push(s);
+  positions = shuffle(positions);
+
+  return picked.map(function(q, idx){
+    var correctText = q.o[q.a];
+    var wrongs = q.o.filter(function(_,i){ return i !== q.a; });
+    wrongs = shuffle(wrongs);
+    var targetPos = positions[idx];
+    var newOpts = [];
+    var wi = 0;
+    for(var k=0;k<4;k++){
+      if(k === targetPos) newOpts.push(correctText);
+      else newOpts.push(wrongs[wi++]);
+    }
+    return {m:q.m, t:q.t, c:q.c, q:q.q, o:newOpts, a:targetPos, e:q.e};
+  });
+}
+
+function loadSession(){
+  try{
+    var raw = localStorage.getItem(LS_SESSION); if(!raw) return null;
+    var s = JSON.parse(raw); if(!s.start) return null;
+    var dur = activeSubject ? activeSubject.durasi : 180;
+    if(Date.now() - s.start > dur*60000) return {start:s.start,attempts:s.attempts||[],expired:true};
+    return {start:s.start, attempts:s.attempts||[], expired:false};
+  }catch(e){return null;}
+}
+function saveSession(){ try{localStorage.setItem(LS_SESSION, JSON.stringify({start:session.start, attempts:session.attempts}));}catch(e){} }
+function initSession(){
+  var saved = loadSession();
+  if(saved && !saved.expired){ session.start = saved.start; session.attempts = saved.attempts; session.expired = false; }
+  else { session.start = Date.now(); session.attempts = []; session.expired = false; saveSession(); }
+  updateSessionStatus();
+  startSessionTimer();
+}
+function updateSessionStatus(){
+  var el = $("sessionStatus"); if(!el) return;
+  var sisa = 5 - session.attempts.length;
+  var dur = activeSubject ? activeSubject.durasi : 180;
+  var sisaW = Math.max(0, dur*60000 - (Date.now()-session.start));
+  var jam = Math.floor(sisaW/3600000), mnt = Math.floor((sisaW%3600000)/60000);
+  if(sisa <= 0){ el.innerHTML = '<span style="color:var(--red)">⚠ Batas 5x percobaan tercapai.</span>'; }
+  else { el.innerHTML = 'Sesi aktif • Sisa <b style="color:var(--accent)">'+sisa+'</b> percobaan • Waktu <b style="color:var(--accent2)">'+jam+'j '+mnt+'m</b>'; }
+  var ap = $("statAttempt"); if(ap) ap.textContent = session.attempts.length;
+  var apill = $("attemptPill"); if(apill) apill.style.opacity = sisa<=0 ? .5 : 1;
+}
+function startSessionTimer(){
+  clearInterval(state.sessionTimer);
+  state.sessionTimer = setInterval(function(){
+    updateSessionStatus();
+    var dur = activeSubject ? activeSubject.durasi : 180;
+    if(Date.now() - session.start > dur*60000){
+      clearInterval(state.sessionTimer);
+      if(!state.finished && !$("quizScreen").classList.contains("hidden")){
+        alert("⏰ Waktu sesi habis. Ujian diakhiri otomatis.");
+        finish();
+      }
+    }
+  }, 10000);
+}
+function addAttempt(a){ session.attempts.push(a); saveSession(); updateSessionStatus(); }
+
+function loadTaruna(){
+  try{
+    var s = JSON.parse(localStorage.getItem(LS_TARUNA)||"{}");
+    taruna = {nama:s.nama||"", nit:s.nit||"", jurusan:s.jurusan||"", semester:s.semester||""};
+    if($("inNama")) $("inNama").value = taruna.nama;
+    if($("inNIT")) $("inNIT").value = taruna.nit;
+    if($("inJurusan")) $("inJurusan").value = taruna.jurusan;
+    if($("inSemester")) $("inSemester").value = taruna.semester;
+    updateNavTaruna();
+  }catch(e){}
+}
+function saveTaruna(){ try{localStorage.setItem(LS_TARUNA, JSON.stringify(taruna));}catch(e){} }
+function updateNavTaruna(){
+  var pill = $("tarunaPill"); if(!pill) return;
+  if(taruna.nama){ pill.style.display = "flex"; $("navTaruna").textContent = taruna.nama + (taruna.nit?" • "+taruna.nit:""); }
+  else { pill.style.display = "none"; }
+}
+
+function loadSettings(){
+  try{
+    var s = JSON.parse(localStorage.getItem(LS_SETTINGS)||"{}");
+    if(s.theme === "light") document.body.classList.add("light");
+    if(s.font) document.documentElement.style.setProperty("--fs", s.font+"px");
+    if($("setTheme")) $("setTheme").value = s.theme || "dark";
+    if($("setFont")) $("setFont").value = s.font || "15";
+  }catch(e){}
+}
+function saveSettings(){
+  try{localStorage.setItem(LS_SETTINGS, JSON.stringify({theme:$("setTheme")?$("setTheme").value:"dark", font:$("setFont")?$("setFont").value:"15"}));}catch(e){}
+}
+
+function startTimer(){
+  state.startTime = Date.now();
+  clearInterval(state.timer);
+  state.timer = setInterval(function(){
+    var t = $("statTime");
+    if(t){
+      var dur = activeSubject ? activeSubject.durasi : 180;
+      var sisaSesi = Math.max(0, Math.floor((dur*60000 - (Date.now()-session.start))/1000));
+      t.textContent = fmt(sisaSesi);
+      var pill = $("timePill");
+      if(pill){
+        pill.classList.remove("warn","danger");
+        if(sisaSesi < 300) pill.classList.add("danger");
+        else if(sisaSesi < 900) pill.classList.add("warn");
+      }
+    }
+  }, 1000);
+}
+
+function buildDrawer(){
+  var g = $("dgrid"); if(!g) return;
+  g.innerHTML = "";
+  QUESTIONS.forEach(function(_,i){
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = i+1;
+    b.addEventListener("click", function(){ state.idx = i; closeDrawer(); renderQuestion(); });
+    g.appendChild(b);
+  });
+}
+function refreshDrawer(){
+  var g = $("dgrid"); if(!g) return;
+  var btns = g.children;
+  for(var i=0;i<btns.length;i++){
+    btns[i].className = "";
+    if(state.answers[i] !== null && state.answers[i] !== undefined){
+      btns[i].classList.add(state.answers[i] === QUESTIONS[i].a ? "ok" : "no");
+    }
+    if(i === state.idx) btns[i].classList.add("cur");
+  }
+}
+function openDrawer(){ var d=$("drawer"),s=$("scrim"); if(d) d.classList.add("open"); if(s) s.classList.add("on"); refreshDrawer(); }
+function closeDrawer(){ var d=$("drawer"),s=$("scrim"); if(d) d.classList.remove("open"); if(s) s.classList.remove("on"); }
+
+function refreshStats(){
+  var ok=0,no=0;
+  for(var i=0;i<state.answers.length;i++){
+    if(state.answers[i]===null||state.answers[i]===undefined) continue;
+    if(state.answers[i]===QUESTIONS[i].a) ok++; else no++;
+  }
+  if($("statOk")) $("statOk").textContent = ok;
+  if($("statNo")) $("statNo").textContent = no;
+}
+
+function renderQuestion(){
+  var i = state.idx, q = QUESTIONS[i];
+  if(!q) return;
+  $("curNum").textContent = i+1;
+  $("progressBar").style.width = ((i+1)/QUESTIONS.length*100) + "%";
+  $("qModule").textContent = "MODUL " + q.m;
+  var tn = activeSubject && activeSubject.topicNames ? activeSubject.topicNames : TOPIC_DEFAULT;
+  $("qTopic").textContent = q.t || tn[q.m] || "—";
+  $("qCat").textContent = q.c === "EL" ? "ELECTRONIC" : "ELECTRICAL";
+  $("qCat").style.color = q.c === "EL" ? "var(--blue)" : "var(--accent)";
+  $("qAttempt").textContent = "PERCOBAAN " + (session.attempts.length+1) + "/5";
+  $("qText").textContent = q.q;
+  var box = $("qOpts"); box.innerHTML = "";
+  var chosen = state.answers[i], locked = state.locked[i];
+  q.o.forEach(function(text,k){
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "opt";
+    var spanK = document.createElement("span"); spanK.className = "k"; spanK.textContent = LETTER[k];
+    var spanT = document.createElement("span"); spanT.textContent = text;
+    btn.appendChild(spanK); btn.appendChild(spanT);
+    if(locked){
+      btn.classList.add("locked");
+      if(k === q.a) btn.classList.add("correct");
+      else if(k === chosen) btn.classList.add("wrong");
+      else btn.classList.add("dim");
+    } else {
+      btn.addEventListener("click", function(){ answer(k); });
+    }
+    box.appendChild(btn);
+  });
+  $("btnPrev").disabled = (i === 0);
+  $("btnPrev").style.opacity = (i === 0) ? .4 : 1;
+  $("btnNext").textContent = (i === QUESTIONS.length-1) ? "Selesai & Lihat Skor ✓" : "Selanjutnya →";
+  refreshDrawer(); refreshStats();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function answer(k){
+  var i = state.idx;
+  if(state.locked[i]) return;
+  state.answers[i] = k; state.locked[i] = true;
+  var q = QUESTIONS[i];
+  var correct = (k === q.a);
+  renderQuestion(); refreshStats();
+  var answeredCount = state.answers.filter(function(a){return a!==null && a!==undefined;}).length;
+  var isLast = (i === QUESTIONS.length-1) && (answeredCount === QUESTIONS.length);
+  showModal({
+    correct: correct,
+    correctText: LETTER[q.a] + ". " + q.o[q.a],
+    chosenText: LETTER[k] + ". " + q.o[k],
+    exp: q.e, isLast: isLast,
+    onNext: function(){
+      if(i < QUESTIONS.length-1){ state.idx = i+1; renderQuestion(); }
+      else if(answeredCount === QUESTIONS.length){ finish(); }
+      else { renderQuestion(); }
+    }
+  });
+}
+
+function showModal(opts){
+  var ov = document.createElement("div"); ov.className = "overlay";
+  var headClass = opts.correct ? "ok" : "no";
+  var ico = opts.correct ? "✔" : "✕";
+  var titleColor = opts.correct ? "var(--accent)" : "var(--red)";
+  var title = opts.correct ? "Jawaban BENAR" : "Jawaban SALAH";
+  var sub = opts.correct ? "Pertahankan, taruna! ⚓" : "Pelajari kembali materinya ya.";
+  var html = '<div class="modal">';
+  html += '<div class="mhead '+headClass+'"><div class="mico">'+ico+'</div><div><h3 style="color:'+titleColor+'">'+title+'</h3><p>'+sub+'</p></div></div>';
+  html += '<div class="mbody">';
+  if(!opts.correct) html += '<div style="font-size:10px;letter-spacing:.7px;color:var(--dim);text-transform:uppercase;font-weight:700;margin-bottom:5px">Jawaban Anda</div><div style="background:var(--bg2);border:1.5px solid rgba(255,77,94,.5);border-radius:10px;padding:11px 13px;font-size:13.5px;margin-bottom:12px">'+opts.chosenText+'</div>';
+  html += '<div style="font-size:10px;letter-spacing:.7px;color:var(--dim);text-transform:uppercase;font-weight:700;margin-bottom:5px">Jawaban Benar</div><div style="background:rgba(0,212,160,.08);border:1.5px solid rgba(0,212,160,.5);border-radius:10px;padding:11px 13px;font-size:13.5px;margin-bottom:12px">'+opts.correctText+'</div>';
+  html += '<div style="font-size:10px;letter-spacing:.7px;color:var(--dim);text-transform:uppercase;font-weight:700;margin-bottom:5px">Pembahasan</div><div style="font-size:13px;line-height:1.65;color:#c9dcec;background:rgba(62,166,255,.06);border-left:3px solid var(--blue);padding:10px 12px;border-radius:8px">'+opts.exp+'</div>';
+  html += '</div><div class="mfoot"><button type="button" class="btn primary" id="mNext">'+(opts.isLast ? "🏁 Lihat Hasil Akhir" : "Lanjut →")+'</button></div></div>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+  var btn = ov.querySelector("#mNext");
+  btn.addEventListener("click", function(){ ov.remove(); if(opts.onNext) opts.onNext(); });
+  setTimeout(function(){btn.focus();}, 50);
+}
+
+function buildPrintAnswers(){
+  var wrap = $("printAnswers"); if(!wrap) return;
+  var answeredList = [];
+  QUESTIONS.forEach(function(q,i){
+    if(state.answers[i] !== null && state.answers[i] !== undefined) answeredList.push({q:q, chosen:state.answers[i], idx:i});
+  });
+  if(answeredList.length === 0){
+    wrap.innerHTML = '<h4>📄 DAFTAR SOAL YANG DIKERJAKAN</h4><div style="font-size:10.5px;color:#000;font-style:italic">Tidak ada soal yang dikerjakan.</div>';
+    return;
+  }
+  wrap.innerHTML = '<h4>📄 DAFTAR SOAL YANG DIKERJAKAN ('+answeredList.length+' soal)</h4><div style="font-size:10.5px;color:#000;font-style:italic;margin-bottom:8px">Hanya soal yang Anda kerjakan yang ditampilkan. Kunci jawaban tidak dicetak.</div>';
+  answeredList.forEach(function(item){
+    var q = item.q, chosen = item.chosen;
+    var isOk = (chosen === q.a);
+    var statusClass = isOk ? "pa-ok" : "pa-no";
+    var statusText = isOk ? "✓ Benar" : "✕ Salah";
+    var el = document.createElement("div"); el.className = "pa-item";
+    var optsHtml = "";
+    q.o.forEach(function(opt,k){
+      var marker = "";
+      if(k === chosen) marker = ' <b class="'+statusClass+'">← (jawaban Anda)</b>';
+      optsHtml += '<div class="pa-line"><span class="pa-key">'+LETTER[k]+'.</span><span>'+opt+marker+'</span></div>';
+    });
+    el.innerHTML = '<div class="pa-q">'+(item.idx+1)+'. ['+(q.c==="EL"?"Electronic":"Electrical")+'] '+q.q+'</div>'+optsHtml+'<div class="pa-line" style="margin-top:6px"><span class="pa-key">→</span><span>Jawaban Anda: <b class="'+statusClass+'">'+LETTER[chosen]+' — '+statusText+'</b></span></div>';
+    wrap.appendChild(el);
+  });
+}
+
+function finish(){
+  if(state.finished) return;
+  state.finished = true;
+  clearInterval(state.timer);
+  var totalTime = elapsed();
+  var ok=0,no=0,blank=0;
+  var perModule = {};
+  var TOTAL = QUESTIONS.length;
+  var tn = activeSubject && activeSubject.topicNames ? activeSubject.topicNames : TOPIC_DEFAULT;
+  QUESTIONS.forEach(function(q,i){
+    if(!perModule[q.m]) perModule[q.m] = {ok:0, total:0};
+    perModule[q.m].total++;
+    if(state.answers[i]===null || state.answers[i]===undefined) blank++;
+    else if(state.answers[i]===q.a){ ok++; perModule[q.m].ok++; }
+    else no++;
+  });
+  var score = Math.round(ok / TOTAL * 100);
+  var timeStr = fmt(totalTime);
+  var kkm = activeSubject ? activeSubject.kkm : 70;
+  addAttempt({score:score, ok:ok, no:no, blank:blank, time:timeStr, total:TOTAL, ts:Date.now()});
+
+  $("resScore").textContent = score;
+  $("resOk").textContent = ok;
+  $("resNo").textContent = no;
+  $("resBlank").textContent = blank;
+  $("resTime").textContent = timeStr;
+  $("resDate").textContent = new Date().toLocaleString("id-ID");
+  $("resNama").textContent = taruna.nama || "—";
+  $("resNIT").textContent = taruna.nit || "—";
+  $("resJurusan").textContent = taruna.jurusan || "—";
+  $("resSemester").textContent = taruna.semester || "—";
+  $("resJumlah").textContent = TOTAL;
+  $("resSubject").textContent = activeSubject ? activeSubject.name : "—";
+  $("resAttemptBadge").textContent = "Percobaan ke-" + session.attempts.length + " dari 5";
+
+  var ring = $("ring");
+  var col = score >= 85 ? "#000" : score >= kkm ? "#000" : score >= 60 ? "#000" : "#000";
+  ring.style.background = "#fff"; ring.style.boxShadow = "none";
+  $("resScore").style.color = "#000";
+
+  var grade, msg, verdictClass, verdictText;
+  if(score >= 85){ grade="A — EXCELLENT"; verdictClass="lulus"; verdictText="✅ LULUS — EXCELLENT"; msg="Luar biasa! Pemahaman Anda sangat baik."; }
+  else if(score >= kkm){ grade="B — BAIK"; verdictClass="lulus"; verdictText="✅ LULUS — BAIK"; msg="Selamat, Anda LULUS! Pertahankan."; }
+  else if(score >= 60){ grade="C — REMIDI"; verdictClass="remidi"; verdictText="⚠ REMIDI — ULANGI"; msg="Nilai di bawah KKM ("+kkm+"). Silakan ulangi."; }
+  else { grade="D — BELUM LULUS"; verdictClass="gagal"; verdictText="❌ BELUM LULUS"; msg="Pelajari kembali materinya lalu ulangi."; }
+
+  $("resGrade").textContent = grade;
+  $("resGrade").style.color = "#000";
+  $("verdictWrap").innerHTML = '<div class="verdict '+verdictClass+'">'+verdictText+'</div>';
+  $("resMsg").textContent = msg;
+
+  var rl = $("resModules"); rl.innerHTML = "";
+  Object.keys(perModule).sort().forEach(function(m){
+    var d = perModule[m];
+    var pct = Math.round(d.ok / d.total * 100);
+    var row = document.createElement("div"); row.className = "rrow";
+    row.innerHTML = '<span style="color:#000;font-weight:800;font-size:11px">M'+m+'</span><span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(tn[m]||"")+'</span><div class="bar"><i style="width:'+pct+'%"></i></div><b style="font-size:11.5px">'+d.ok+'/'+d.total+'</b>';
+    rl.appendChild(row);
+  });
+
+  var tb = $("historyTable").querySelector("tbody"); tb.innerHTML = "";
+  session.attempts.forEach(function(a,i){
+    var tr = document.createElement("tr");
+    var t = a.total ? a.total : TOTAL;
+    tr.innerHTML = '<td>'+(i+1)+'</td><td><b>'+a.score+'</b></td><td>'+a.ok+'/'+t+'</td><td>'+a.time+'</td>';
+    tb.appendChild(tr);
+  });
+
+  var sisa = 5 - session.attempts.length;
+  $("sessionInfo").textContent = sisa > 0 ? ("Sisa "+sisa+" percobaan dalam sesi ini.") : ("⚠ Batas 5x percobaan tercapai.");
+  $("btnRetry").disabled = sisa <= 0;
+  $("btnReview").disabled = sisa <= 0;
+  $("btnRetry").style.opacity = sisa <= 0 ? .4 : 1;
+  $("btnReview").style.opacity = sisa <= 0 ? .4 : 1;
+
+  buildPrintAnswers();
+  $("quizScreen").classList.add("hidden");
+  $("resultScreen").classList.remove("hidden");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function startNewAttempt(){
+  var bank = activeSubject.bank;
+  QUESTIONS = buildShuffledQuestions(bank, activeSubject.jumlah);
+  state = {idx:0, answers:[], locked:[], startTime:Date.now(), timer:null, sessionTimer:state.sessionTimer, finished:false};
+  for(var i=0;i<QUESTIONS.length;i++){ state.answers.push(null); state.locked.push(false); }
+  $("totNum").textContent = QUESTIONS.length;
+  buildDrawer(); startTimer();
+  var t = $("statTime"); if(t) t.textContent = fmt(activeSubject.durasi*60);
+  renderQuestion(); refreshStats();
+}
+
+function buildSubjectList(){
+  var list = $("subjectList"); if(!list) return;
+  list.innerHTML = "";
+  Object.keys(SUBJECTS).forEach(function(k){
+    var s = SUBJECTS[k];
+    var el = document.createElement("div");
+    el.className = "subj-card";
+    if(activeSubject && activeSubject.id === s.id) el.classList.add("active");
+    el.innerHTML = '<div class="subj-ico">'+s.icon+'</div><div class="subj-info"><b>'+s.name+'</b><small>'+s.desc+'</small></div><div class="subj-check">✓</div>';
+    el.addEventListener("click", function(){
+      activeSubject = s;
+      document.querySelectorAll(".subj-card").forEach(function(x){x.classList.remove("active");});
+      el.classList.add("active");
+      try{ localStorage.removeItem(LS_SESSION); }catch(e){}
+      session = {start:Date.now(), attempts:[], expired:false};
+      saveSession(); updateSessionStatus(); updateStartButton();
+    });
+    list.appendChild(el);
+  });
+}
+function updateStartButton(){
+  var agree = $("agreeRules"), btn = $("btnStart");
+  if(!agree || !btn) return;
+  var ok = agree.checked && activeSubject;
+  btn.disabled = !ok; btn.style.opacity = ok ? 1 : .4;
+}
+
+function goHome(){
+  try{ localStorage.removeItem(LS_SESSION); localStorage.removeItem(LS_TARUNA); }catch(e){}
+  clearInterval(state.timer); clearInterval(state.sessionTimer);
+  state = {idx:0,answers:[],locked:[],startTime:0,timer:null,sessionTimer:null,finished:false};
+  session = {start:null,attempts:[],expired:false};
+  taruna = {nama:"",nit:"",jurusan:"",semester:""};
+  QUESTIONS = []; activeSubject = null;
+  if($("statOk")) $("statOk").textContent = "0";
+  if($("statNo")) $("statNo").textContent = "0";
+  if($("statTime")) $("statTime").textContent = "--:--";
+  if($("statAttempt")) $("statAttempt").textContent = "0";
+  if($("tarunaPill")) $("tarunaPill").style.display = "none";
+  if($("agreeRules")) $("agreeRules").checked = false;
+  if($("printAnswers")) $("printAnswers").innerHTML = "";
+  $("resultScreen").classList.add("hidden");
+  $("quizScreen").classList.add("hidden");
+  $("identityScreen").classList.add("hidden");
+  $("startScreen").classList.remove("hidden");
+  buildSubjectList(); updateStartButton(); updateNavTaruna();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ============ TUTORIAL ============ */
+function showTutorial(){
+  var ov = document.createElement("div"); ov.className = "overlay";
+  ov.innerHTML = '<div class="modal wide">' +
+    '<div class="mhead info"><div class="mico">📖</div><div><h3 style="color:var(--blue)">Panduan MARITEST</h3><p>7 langkah + perbandingan BENAR/SALAH</p></div></div>' +
+    '<div class="mbody" style="padding:0 12px 12px">' +
+      '<div id="tutPoster">' +
+        '<div class="tp-header">' +
+          '<div class="tp-logos"><span>🌐</span><span>💬</span></div>' +
+          '<h1>Cara Buka MARITEST</h1>' +
+          '<h2>➜ DI CHROME ⬅</h2>' +
+          '<div class="sub">(Dari WhatsApp ke Chrome)</div>' +
+        '</div>' +
+        '<div class="tp-grid">' +
+          '<div class="tp-step"><div class="tp-step-head"><span class="tp-num">1</span>TERIMA FILE</div><div class="tp-step-body"><p>Tap file <b>.html</b> sekali di grup WA.</p></div></div>' +
+          '<div class="tp-step"><div class="tp-step-head"><span class="tp-num">2</span>FILE DI WA</div><div class="tp-step-body"><div class="tp-badge-red">⚠ BELUM BISA PRINT/WA</div><p>Ini masih di dalam WA.</p></div></div>' +
+          '<div class="tp-step"><div class="tp-step-head"><span class="tp-num">3</span>TAP IKON ⋮</div><div class="tp-step-body"><p>Pojok <b>kanan atas</b>.</p></div></div>' +
+          '<div class="tp-step"><div class="tp-step-head"><span class="tp-num">4</span>PILIH</div><div class="tp-step-body"><p>Pilih <b>"Buka dengan browser"</b> / <b>"Open in Chrome"</b>.</p></div></div>' +
+          '<div class="tp-step"><div class="tp-step-head"><span class="tp-num">5</span>KALAU TIDAK ADA</div><div class="tp-step-body"><p>Pilih <b>Download</b> → buka app <b>Chrome</b> → ketik:</p><div class="tp-mini">file:///sdcard/Download</div></div></div>' +
+          '<div class="tp-step"><div class="tp-step-head"><span class="tp-num">6</span>CEK SUDAH DI CHROME</div><div class="tp-step-body"><div class="tp-check"><span class="ic">✅</span><span>Ada <b>address bar</b> atas</span></div><div class="tp-check"><span class="ic">✅</span><span>Ada <b>⋮</b> kanan atas</span></div></div></div>' +
+          '<div class="tp-step" style="grid-column:span 4"><div class="tp-step-head" style="background:linear-gradient(135deg,#10b981,#059669)"><span class="tp-num" style="color:#047857">7</span>BARU KERJAKAN!</div><div class="tp-step-body" style="background:#f0fdf4"><div class="tp-check"><span class="ic">🖨</span><span><b>Print</b> ✅</span></div><div class="tp-check"><span class="ic">💬</span><span><b>WA</b> ✅</span></div><div class="tp-check"><span class="ic">📕</span><span><b>PDF</b> ✅</span></div></div></div>' +
+        '</div>' +
+        '<div class="tp-row">' +
+          '<div class="tp-box green"><div class="tp-box-title">✅ BENAR</div><div class="tp-check"><span class="ic">✅</span><span>Address bar ada di atas</span></div><div class="tp-check"><span class="ic">✅</span><span>Tombol Print &amp; WA <b>JALAN</b></span></div><div class="tp-check"><span class="ic">✅</span><span>Bisa scroll bebas</span></div></div>' +
+          '<div class="tp-box red"><div class="tp-box-title red">❌ SALAH</div><div class="tp-check"><span class="ic">❌</span><span>Tidak ada address bar</span></div><div class="tp-check"><span class="ic">❌</span><span>Tombol Print &amp; WA <b>MATI</b></span></div><div class="tp-check"><span class="ic">❌</span><span>Ada tombol back WA</span></div></div>' +
+        '</div>' +
+        '<div class="tp-row">' +
+          '<div class="tp-box purple"><div class="tp-box-title purple">📱 iPhone / Safari</div><div style="font-size:11px;line-height:1.6"><b>1.</b> Tap file di WA<br><b>2.</b> Tap ikon <b>↗</b> atau <b>⋯</b><br><b>3.</b> Pilih <b>"Open in Safari"</b><br><b>4.</b> Kalau tidak ada → <b>"Save to Files"</b><br><b>5.</b> Buka app <b>Files</b> → tap file</div></div>' +
+          '<div class="tp-box orange"><div class="tp-box-title orange">💡 TIPS</div><div class="tp-tip">Kalau tetap tidak bisa → <b>SCREENSHOT halaman hasil</b> lalu kirim manual ke WA dosen.<br><br><b>Nilai tetap SAH ✅</b></div></div>' +
+        '</div>' +
+        '<div class="tp-footer">⚓ SEMANGAT MENGERJAKAN MARITEST! ⚓</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="mfoot"><button type="button" class="btn" id="tutPrint">🖨 Print Poster</button><button type="button" class="btn primary" id="tutClose" style="flex:1.5">✓ Saya Mengerti</button></div>' +
+  '</div>';
+  document.body.appendChild(ov);
+  ov.querySelector("#tutClose").addEventListener("click", function(){ ov.remove(); });
+  ov.querySelector("#tutPrint").addEventListener("click", function(){ window.print(); });
+  ov.addEventListener("click", function(e){ if(e.target === ov) ov.remove(); });
+}
+
+function bindEvents(){
+  $("btnDrawer").addEventListener("click", function(){
+    var d = $("drawer");
+    if(d.classList.contains("open")) closeDrawer(); else openDrawer();
+  });
+  $("btnCloseDrawer").addEventListener("click", closeDrawer);
+  $("scrim").addEventListener("click", closeDrawer);
+
+  var sp = $("settingsPanel");
+  $("btnSettings").addEventListener("click", function(e){ e.stopPropagation(); sp.classList.toggle("open"); });
+  document.addEventListener("click", function(e){
+    if(!sp.contains(e.target) && e.target !== $("btnSettings")) sp.classList.remove("open");
+  });
+  $("setTheme").addEventListener("change", function(){ document.body.classList.toggle("light", this.value === "light"); saveSettings(); });
+  $("setFont").addEventListener("change", function(){ document.documentElement.style.setProperty("--fs", this.value+"px"); saveSettings(); });
+
+  $("agreeRules").addEventListener("change", updateStartButton);
+  $("openTutorial").addEventListener("click", showTutorial);
+  $("btnHelp").addEventListener("click", showTutorial);
+  $("btnHelpFromResult").addEventListener("click", showTutorial);
+
+  $("btnCopyLink").addEventListener("click", function(){
+    var url = window.location.href;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){ alert("✅ Link disalin. Buka Chrome → paste link."); });
+    } else {
+      var ta = document.createElement("textarea"); ta.value = url; document.body.appendChild(ta); ta.select();
+      try{ document.execCommand("copy"); alert("✅ Link disalin."); }catch(e){ alert("Link: " + url); }
+      ta.remove();
+    }
+  });
+
+  $("btnStart").addEventListener("click", function(){
+    if(!activeSubject){ alert("Pilih mata kuliah terlebih dahulu."); return; }
+    initSession();
+    if(session.attempts.length >= 5){ alert("Batas 5x percobaan per sesi tercapai."); return; }
+    $("idSubjectName").textContent = activeSubject.name;
+    $("startScreen").classList.add("hidden");
+    $("identityScreen").classList.remove("hidden");
+    loadTaruna();
+  });
+
+  $("btnBackStart").addEventListener("click", function(){
+    $("identityScreen").classList.add("hidden");
+    $("startScreen").classList.remove("hidden");
+  });
+  $("btnConfirmId").addEventListener("click", function(){
+    var nama = $("inNama").value.trim(), nit = $("inNIT").value.trim();
+    var jur = $("inJurusan").value, sem = $("inSemester").value;
+    if(!nama || !nit || !jur || !sem){ $("idError").style.display = "block"; return; }
+    $("idError").style.display = "none";
+    taruna = {nama:nama, nit:nit, jurusan:jur, semester:sem};
+    saveTaruna(); updateNavTaruna();
+    $("identityScreen").classList.add("hidden");
+    $("quizScreen").classList.remove("hidden");
+    startNewAttempt();
+  });
+
+  $("btnPrev").addEventListener("click", function(){ if(state.idx > 0){ state.idx--; renderQuestion(); } });
+
+  $("btnFinishNow").addEventListener("click", function(){
+    var answered = state.answers.filter(function(a){return a!==null && a!==undefined;}).length;
+    var kosong = QUESTIONS.length - answered;
+    var ov = document.createElement("div"); ov.className = "overlay";
+    ov.innerHTML = '<div class="modal"><div class="mhead"><div class="mico" style="background:rgba(255,176,32,.18);border:1.5px solid rgba(255,176,32,.5);color:var(--accent2)">⏹</div><div><h3 style="color:var(--accent2)">Selesai Sekarang?</h3><p>Soal terjawab: '+answered+' / '+QUESTIONS.length+(kosong>0?' • Kosong: '+kosong:'')+'</p></div></div><div class="mbody"><div style="font-size:13px;line-height:1.6;color:#c9dcec">Nilai dihitung dari <b style="color:var(--accent2)">total '+QUESTIONS.length+' soal</b>. PDF hanya akan menampilkan soal yang Anda kerjakan.</div></div><div class="mfoot"><button type="button" class="btn" id="mCancel">Lanjut</button><button type="button" class="btn warn" id="mOk" style="flex:1.5">Ya, Selesai</button></div></div>';
+    document.body.appendChild(ov);
+    ov.querySelector("#mCancel").addEventListener("click", function(){ ov.remove(); });
+    ov.querySelector("#mOk").addEventListener("click", function(){ ov.remove(); finish(); });
+  });
+
+  $("btnNext").addEventListener("click", function(){
+    if(state.idx < QUESTIONS.length-1){ state.idx++; renderQuestion(); return; }
+    var kosong = state.answers.filter(function(a){return a===null || a===undefined;}).length;
+    if(kosong > 0){
+      var ov = document.createElement("div"); ov.className = "overlay";
+      ov.innerHTML = '<div class="modal"><div class="mhead"><div class="mico" style="background:rgba(255,176,32,.18);border:1.5px solid rgba(255,176,32,.5);color:var(--accent2)">⚠</div><div><h3 style="color:var(--accent2)">Masih Ada Soal Kosong</h3><p>Terdapat '+kosong+' soal belum dijawab — dihitung nilai 0.</p></div></div><div class="mfoot"><button type="button" class="btn" id="mCancel">Kembali</button><button type="button" class="btn primary" id="mOk" style="flex:1.5">Selesai Tetap</button></div></div>';
+      document.body.appendChild(ov);
+      ov.querySelector("#mCancel").addEventListener("click", function(){ ov.remove(); });
+      ov.querySelector("#mOk").addEventListener("click", function(){ ov.remove(); finish(); });
+    } else finish();
+  });
+
+  $("btnRetry").addEventListener("click", function(){
+    if(session.attempts.length >= 5){ alert("Batas percobaan tercapai."); return; }
+    $("resultScreen").classList.add("hidden");
+    $("quizScreen").classList.remove("hidden");
+    startNewAttempt();
+  });
+
+  $("btnReview").addEventListener("click", function(){
+    if(session.attempts.length >= 5){ alert("Batas percobaan tercapai."); return; }
+    $("resultScreen").classList.add("hidden");
+    $("quizScreen").classList.remove("hidden");
+    startNewAttempt(); openDrawer();
+  });
+
+  /* PDF — TAJAM + HITAM PUTIH */
+  $("btnPrint").addEventListener("click", function(){
+    if(isInAppBrowser()){
+      alert("⚠ Anda membuka di browser dalam aplikasi (WA/IG/TikTok).\n\nCetak PDF tidak akan jalan.\n\nSolusi:\n1. Tap ⋮ di pojok kanan atas\n2. Pilih 'Buka dengan Chrome/Safari'\n\nAtau gunakan tombol 'Print Browser'.");
+      return;
+    }
+    if(typeof html2pdf === "undefined"){ alert("Library PDF belum dimuat. Coba tombol 'Print Browser'."); return; }
+    var el = $("printArea");
+    var opt = {
+      margin:[6,6,6,6],
+      filename:"MARITEST_"+(taruna.nit||"Taruna")+"_"+new Date().toISOString().slice(0,10)+".pdf",
+      image:{type:"jpeg", quality:1.0},
+      html2canvas:{
+        scale:3,
+        useCORS:true,
+        backgroundColor:"#ffffff",
+        logging:false,
+        scrollY:0,
+        windowWidth:document.documentElement.scrollWidth
+      },
+      pagebreak:{mode:["css","avoid-all"]},
+      jsPDF:{unit:"mm", format:"a4", orientation:"portrait", compress:true}
+    };
+    html2pdf().set(opt).from(el).save();
+  });
+  $("btnNativePrint").addEventListener("click", function(){ window.print(); });
+
+  $("btnWa").addEventListener("click", function(){
+    if(isInAppBrowser()){
+      var ov = document.createElement("div"); ov.className = "overlay";
+      ov.innerHTML = '<div class="modal"><div class="mhead no"><div class="mico">⚠</div><div><h3 style="color:var(--red)">Tidak Bisa Kirim WA dari Sini</h3><p>Anda membuka di browser dalam aplikasi</p></div></div><div class="mbody"><div style="font-size:13.5px;line-height:1.7;color:#c9dcec">WhatsApp tidak bisa dibuka dari dalam WhatsApp/Instagram/TikTok.<br><br><b>Cara perbaiki:</b><br>1. Tap ikon <b>⋮</b> di pojok kanan atas<br>2. Pilih <b>"Buka dengan Chrome"</b> / <b>"Open in Safari"</b><br>3. Buka hasil ujian → klik tombol WA lagi</div><div style="margin-top:12px;padding:10px 12px;background:rgba(62,166,255,.1);border-left:3px solid var(--blue);border-radius:6px;font-size:12.5px;color:#c9dcec"><b>Atau:</b> screenshot halaman hasil ini lalu kirim manual ke dosen via WA.</div></div><div class="mfoot"><button type="button" class="btn primary" id="mOk">Mengerti</button></div></div>';
+      document.body.appendChild(ov);
+      ov.querySelector("#mOk").addEventListener("click", function(){ ov.remove(); });
+      return;
+    }
+    var score = $("resScore").textContent, ok = $("resOk").textContent;
+    var no = $("resNo").textContent, blank = $("resBlank").textContent;
+    var time = $("resTime").textContent, date = $("resDate").textContent;
+    var attempt = $("resAttemptBadge").textContent;
+    var verdict = $("verdictWrap").textContent.trim();
+    var lines = [
+      "*HASIL MARITEST — POLTEKPEL SURABAYA*",
+      "Mata Kuliah: *"+(activeSubject?activeSubject.name:"-")+"*",
+      "Dosen Pengampu: Rafael Sukirno, CE",
+      "",
+      "👤 *"+(taruna.nama||"-")+"*",
+      "🆔 NIT: "+(taruna.nit||"-"),
+      "🎓 "+(taruna.jurusan||"-")+" • Semester "+(taruna.semester||"-"),
+      "📝 Jumlah soal: "+QUESTIONS.length+" (dinilai dari "+QUESTIONS.length+")",
+      "",
+      "📅 "+date,
+      "🔄 "+attempt,
+      "📊 Skor: *"+score+"/100*",
+      "🏆 Status: *"+verdict+"*",
+      "✅ Benar: "+ok,
+      "❌ Salah: "+no,
+      "⬜ Kosong: "+blank,
+      "⏱ Waktu: "+time,
+      "",
+      "_Dikirim otomatis dari MARITEST_"
+    ];
+    var text = encodeURIComponent(lines.join("\n"));
+    try{ window.open("https://wa.me/" + WA_DOSEN + "?text=" + text, "_blank"); }
+    catch(e){ alert("Tidak bisa buka WhatsApp. Coba salin hasil manual."); }
+  });
+
+  $("btnHome").addEventListener("click", function(){
+    var ov = document.createElement("div"); ov.className = "overlay";
+    ov.innerHTML = '<div class="modal"><div class="mhead info"><div class="mico">🏠</div><div><h3 style="color:var(--blue)">Kembali ke Home?</h3><p>Anda akan keluar dari ujian saat ini.</p></div></div><div class="mbody"><div style="font-size:13px;line-height:1.6;color:#c9dcec">Sesi &amp; riwayat akan <b style="color:var(--accent2)">direset</b>.</div></div><div class="mfoot"><button type="button" class="btn" id="mCancel">Batal</button><button type="button" class="btn primary" id="mOk" style="flex:1.5">Ya, Reset &amp; Home</button></div></div>';
+    document.body.appendChild(ov);
+    ov.querySelector("#mCancel").addEventListener("click", function(){ ov.remove(); });
+    ov.querySelector("#mOk").addEventListener("click", function(){ ov.remove(); goHome(); });
+  });
+}
+
+function init(){
+  if(isInAppBrowser()){ $("warnBanner").classList.add("show"); }
+  buildSubjectList();
+  loadSettings();
+  updateStartButton();
+  loadTaruna();
+  bindEvents();
+}
+
+if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", init); }
+else { init(); }
+
+})();
+</script>
+</body>
+</html>
